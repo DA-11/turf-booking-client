@@ -1,0 +1,33 @@
+.gameDetails_Container{
+    display: flex;
+    justify-content: center;
+}
+
+.gameDetails_Container_box{
+    margin-top: 80px;
+    padding: 10px;
+    width: 90vw;
+    max-width: 1200px;
+    border: 1px solid black;
+}
+
+.gameActivityImg{
+    height: 25px;
+    min-width: 25px;
+    margin-right: 10px;
+}
+
+.gameDetails_Container_game_info,
+.gameDetails_Container_time,
+.gameDetails_Container_date,
+.gameDetails_Container_location
+{
+    display: flex;
+    align-items: center;
+}
+
+.icons{
+    height: 22px;
+    min-width: 22px;
+    margin-right: 8px;
+}

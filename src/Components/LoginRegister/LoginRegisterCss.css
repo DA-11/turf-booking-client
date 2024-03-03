@@ -1,0 +1,55 @@
+
+
+.login_register_form_container{
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .login_register_form_container_register_login_btns{
+    display: flex;
+    width: 300px;
+    justify-content: space-evenly;
+    margin: 20px;
+  }
+  
+  .register_btn,.login_btn{
+    background-color: rgba(0, 0, 0, 0.199);
+    padding: 10px;
+    font-size: 20px;
+    font-weight: 600;
+    border-radius: 10px;
+  
+  }
+  
+  .login_form,.register_form{
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    width: 300px;
+  
+  }
+  
+  .form_field_container{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    font-size: 24px;
+  }
+  
+  .form_input{
+    height: 30px;
+    font-size: 18px;
+  }
+  
+  .login_form_submit_btn,.register_form_submit_btn{
+    padding: 10px;
+    font-size: 20px;
+    font-weight: 600;
+  }
+
+  .googleAuthLoginBtn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  

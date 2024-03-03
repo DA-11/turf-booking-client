@@ -1,0 +1,155 @@
+.turfInfo_Container_box{
+    border: 1px solid rgb(250, 250, 250);
+    background-color: black;
+    color: white;
+}
+
+.turfInfo_Container{
+    overflow: hidden;
+}
+
+.turfInfo_Container_Img_slider_Container{
+    height: 50vh;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: start;
+    border: 1px solid black;
+    position: relative;
+}
+
+.turfInfo_Container_Img_slider_Container_img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.turfInfo_Container_information_Container{
+    margin: 10px;
+    font-size: 20px;
+}
+
+
+.turfInfo_Container_name_Container{
+    font-size: 28px;
+    position: absolute;
+    z-index: 101;
+    color: rgb(255, 255, 255);
+    top: 40%;
+    font-weight: 700;
+    font-style: italic;
+    left: 2%;
+    right: 0;
+    padding: 2px;
+}
+
+.turfInfo_Container_location_Container{
+  border-radius: 10px;  
+  margin-top: 10px;
+  margin-bottom: 10px;
+ 
+}
+
+.turfInfo_Container_location_Container_2{
+    font-size: 20px;
+}
+
+.turfInfo_Container_location_Container_svg{
+    height: 30px;
+    margin-right: 10px;
+}
+
+.turfInfo_Container_price_Container{
+    margin-bottom: 10px;
+    border-radius: 4px;
+    display: inline-flex;
+    font-size: 20px;
+}
+
+.turfInfo_Container_game{
+    margin-right: 5px;
+    margin-bottom: 10px;
+    border-radius: 2px;
+    display: inline-flex;
+}
+
+.timePicker_container{
+    display: flex;
+    justify-content: center;
+}
+
+.timePicker{
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+    margin-top: 10px;
+    margin-bottom: 10px;
+    column-gap: 5vw;
+}
+
+.turfInfo_booking_btns{
+    display: flex;
+}
+
+.turfInfo_booking_btn_booked,
+.turfInfo_booking_btn_not_booked{
+    margin-right: 30px;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.turfInfo_booking_btn_bg{
+    background-color: gray;
+}
+
+
+.turfInfo_Contianer_slot_availability_form{
+    display: flex;
+    flex-direction: column;
+}
+
+.turfInfo_Container_form_div{
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.turfInfo_Container_host_btn{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.host_btn{
+    padding: 10px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+label{
+    font-size: 22px;
+}
+
+.turfInfo_Container_form_input{
+    height: 26px;
+    min-width: 330px;
+    max-width: 500px;
+}
+
+.turfInfo_Container_slot_heading{
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.turfInfo_form_Container{
+    display: flex;
+    justify-content: center;
+    
+}
+
+.slot_check_container{
+    padding: 10px;
+    background: linear-gradient(to bottom, #323232 0%, #3F3F3F 40%, #1C1C1C 150%), linear-gradient(to top, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.25) 200%);
+ background-blend-mode: multiply;    
+}
+

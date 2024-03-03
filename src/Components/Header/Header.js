@@ -1,16 +1,22 @@
 import { useContext, useState } from "react"
-import {UserContext} from "../UserContext"
-
+import {UserContext} from "../../UserContext"
+import { useNavigate } from "react-router-dom";
+import './headerCss.css'
 export default function Header(){
 
     const[menuOpen,setMenuOpen] = useState(false);
+    const[userInfoBox,setUserInfoBox] = useState(false);
+
+    const navigate = useNavigate();
+
     const {user} = useContext(UserContext);
     
     function handleMenuPopUp(){
         setMenuOpen(!menuOpen);
-        console.log('button cliekced ' + menuOpen)
     }
     
+    
+
     function toggleMenu(){
         if(menuOpen){
             return (
@@ -27,10 +33,38 @@ export default function Header(){
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="mobile_menu_svg">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
                     </svg>
-
                 </div>
             )
         }
+    }
+
+    function openUserProfile(){
+        navigate("/profile");
+    }
+
+    function openIndexPage(){  
+        setMenuOpen(false);   
+        navigate("/");
+    }
+
+    function openFindGame(){    
+        setMenuOpen(false);
+        navigate("/findGame");
+    }
+
+    function openHostGame(){     
+        setMenuOpen(false);
+        navigate("/hostGame");
+    }
+
+    function openFindTurfs(){     
+        setMenuOpen(false);
+        navigate("/turfShowCase");
+    }
+
+    function openLogInPage(){   
+        setMenuOpen(false);  
+        navigate("/login");
     }
 
     return (
@@ -38,29 +72,48 @@ export default function Header(){
         <div className="header_wrapper">
             <div className="header">
                 <div className="header_options"> 
-                    <div className="logo">
+                    <div className="logo" onClick={openIndexPage}>
                         LOGO
                     </div>
-                    <div className="header_find_game_btn">
+                    
+                    <div className="header_find_game_btn" onClick={openFindGame}>
                         FIND A GAME
                     </div>
 
-                    <div className="header_host_game_btn">
+                    <div className="header_host_game_btn" onClick={openHostGame}>
                         HOST A GAME
                     </div>
+
+                    
                 </div>
 
                 <div>
                     {user && (
                         <div className="userBadge">
-                            <div>User Photo</div>
+                            <div className="header_user_greeting">{`${user.username}`}</div>
+                            
+                            <div className="header_user_photo_container" onClick={openUserProfile}>
+                                <img src={user.photo_url} className="header_user_photo"></img>
+                                
+                            </div>
+                            
                             <div className="header_menu_option" onClick={() => {handleMenuPopUp()}}>{toggleMenu()}</div>
+                            
                         </div>
                     )}
 
                     {!user && (
-                        <div className="log_in_icon">
-                            <div>Log In</div>
+                        <div className="log_in_icon_contaniner">
+                            
+                            <div className="" onClick={() => {openLogInPage()}}>
+                                <div className="log_in_icon_svg">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="mobile_menu_svg">
+                                        <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 9V5.25A2.25 2.25 0 0 1 10.5 3h6a2.25 2.25 0 0 1 2.25 2.25v13.5A2.25 2.25 0 0 1 16.5 21h-6a2.25 2.25 0 0 1-2.25-2.25V15M12 9l3 3m0 0-3 3m3-3H2.25" />
+                                    </svg>
+                                    <div className="log_in_icon_text">Login</div>
+                                </div>
+                            </div>
+                            
                             <div className="header_menu_option" onClick={() => {handleMenuPopUp()}}>{toggleMenu()}</div>
                             
                         </div>
@@ -74,9 +127,9 @@ export default function Header(){
             <div className={menuOpen ? "mobile_menu open" : "mobile_menu"}>
                 
                 <div className="mobile_menu_btns">
-                    <div className="mobile_menu_find_game_btn">FIND A GAME</div>
-                    <div className="mobile_menu_host_game_btn">HOST A GAME</div>
-                    <div className="mobile_menu_about_us_btn">FIND TURFS</div>
+                    <div className="mobile_menu_find_game_btn" onClick={openFindGame}>FIND A GAME</div>
+                    <div className="mobile_menu_host_game_btn"  onClick={openHostGame}>HOST A GAME</div>
+                    <div className="mobile_menu_about_us_btn" onClick={openFindTurfs}>FIND TURFS</div>
                 </div>
 
                 <div className="mobile_menu_social_media_row">

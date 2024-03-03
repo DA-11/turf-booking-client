@@ -1,0 +1,68 @@
+.findGame_Container{
+    
+    display: flex;
+    justify-content: center;
+}
+
+.findGame_Container_box{
+    margin-top: 80px;
+    
+}
+
+.gameInfo_Container{
+    border: 1px solid black;
+    width: 90vw;
+    max-width: 1250px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.gameInfo_Container_information{
+    padding: 10px;
+}
+
+.gameInfo_Container_date{
+    background-color: rgba(187, 186, 186, 0.534);
+    padding: 10px;
+    font-size: 20px;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+}
+
+.gameInfo_Container_time{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+
+
+.gameInfo_Container_time,.gameInfo_Container_location,.gameInfo_Container_players,.gameInfo_Container_host_info_chat_option{
+    display: flex;
+    align-items: center;
+}
+
+.icons{
+    height: 22px;
+    min-width: 22px;
+    margin-right: 8px;
+}
+
+.gameInfo_Container_host_info{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.gameInfo_Container_join_game{
+    background-color: green;
+    color: white;
+    padding:10px;
+
+}
+
+.gameInfo_Container_No_game{
+    margin-top: 20px;
+}

@@ -1,0 +1,93 @@
+.turf_Upload_Container_box{
+    padding-top: 80px;
+    display: flex;
+    justify-content: center;
+}
+
+.turf_Upload_Container{
+    width: 100%;
+    max-width: 850px;
+}
+
+.turf_Upload_Container_Heading{
+    font-size: 28px;
+    display: flex;
+    justify-content: center;
+}
+
+.turf_upload_form{
+    padding: 10px;
+}
+
+.turf_upload_form_input_div{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.turf_upload_form_label{
+    font-size: 22px;
+}
+
+.turf_upload_form_input{
+    margin-top: 6px;
+    height: 30px;
+    font-size: 20px;
+}
+
+.turf_upload_form_input_submit_div{
+    display: flex;
+    justify-content: center;
+}
+
+.turf_upload_form_submit_btn{
+    padding: 10px;
+    font-size: 20px;
+    background-color: black;
+    color: white;
+    border:none;
+}
+
+.turf_upload_form_label_games{
+    margin-top: 10px;
+}
+
+.turf_upload_form_input_checkbox{
+
+}
+
+.turf_upload_form_checkbox_container{
+    border: 1px solid black;
+    display: inline-block;
+    font-size: 18px;
+    padding: 4px;
+    border-radius: 5px;
+    margin-bottom: 8px;
+    margin: 5px;
+}
+
+.loading_container{
+    display: flex;
+    align-items: center;
+}
+
+.loader {
+    margin-right: 10px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: inline-block;
+    border-top: 3px solid #000000;
+    border-right: 3px solid transparent;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+  }
+  
+  @keyframes rotation {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  } 

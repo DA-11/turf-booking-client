@@ -1,0 +1,356 @@
+
+.index_page_img{
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    filter: brightness(50%);
+  }
+  
+  .index_page_img_container{
+    position: relative;
+    text-align: center;
+    color: rgb(255, 255, 255);
+  }
+  
+  .index_page_img_content{
+    display: flex;
+    font-style: italic;
+    text-wrap:wrap;
+    position: absolute;
+    top: 20%;
+    text-align: left;
+    padding: 20px;
+  }
+  
+  .index_page_img_text_content{
+    display: flex;
+    max-width: 500px;
+    flex-direction: column;
+  }
+  
+  .index_page_img_text-content_line1{
+    text-decoration: underline;
+    text-decoration-color: rgba(115, 216, 48, 0.938);
+    font-size: 40px;
+    font-weight: 800;
+  }
+  
+  .index_page_img_text-content_line2{
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: 500;
+  }
+  
+  .index_page_img_feature_content{
+    position: absolute;
+    display: none;
+    font-size: 36px;
+    font-weight: 600;
+  }
+  
+  
+  .index_page_img_feature_content_tag{
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .index_page_img_feature_content_tag_text{
+    margin-right: 10px;
+  }
+  
+  
+  .index_page_img_feature_content_svg{
+    width: 80px;
+    height: 80px;
+  }
+  
+  
+.index_page_turf_container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+
+  }
+  
+  .index_page_turf_container_heading,
+  .details_container_heading{
+    font-size: 36px;
+    margin-bottom: 6vh;
+    font-weight: 600;
+    text-wrap:wrap;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+  }
+  
+  .index_page_turf_container_slider{
+    display: grid;
+    grid-template-columns:1fr;
+    row-gap: 30px;
+    column-gap: 60px;
+    padding: 20px;
+    border: 1px solid black;
+  }
+  
+  .index_page_turf_Container_Img_slider_Container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius:10px;
+    width: 300px;
+    height: 420px;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.541);
+    overflow: hidden;
+    background-color: white;
+  }
+  
+  .index_page_turf_container_slider_item_img_container{
+    /* border-radius: 10px; */
+    /* overflow: hidden; */
+    height: 55%;
+    width: 100%;
+    position: relative;
+    background-color: greenyellow;
+  }
+  
+
+.turfInfo_Container_image_slider_container_img{
+    height: 100%;
+    width: 100%;
+    object-fit:cover;
+    position: absolute;
+    z-index: 100;
+}
+  .index_page_turf_container_slider_item_information{
+    margin-left: 10px;
+    margin-top: 10px;
+    width: 280px;
+  }
+  
+  .index_page_turf_container_slider_item_information_name{
+    font-size: 20px;
+    font-weight: 600;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space:nowrap;
+    margin-bottom: 5px;
+  }
+  
+  .index_page_turf_container_slider_item_information_location{
+    display: flex;
+    align-items: center;
+  }
+  
+  .index_page_turf_container_slider_item_information_location_svg{
+    height: 30px;
+  }
+  
+  .index_page_turf_container_slider_item_information_location_text{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 280px;
+    white-space:nowrap;
+  }
+  
+  
+  .index_page_turf_container_slider_item_information_game{
+    display: inline-block;
+    padding: 4px;
+    border-radius: 8px;
+    background-color: rgba(128, 128, 128, 0.349);
+    margin-top: 6px;
+    margin-right: 6px
+  }
+  
+  .index_page_turf_container_slider_item_information_price{
+    margin-top: 10px;
+    margin-bottom:10px;
+    font-weight: 700;
+    color: green;
+  }
+  
+ 
+.image_slider_arrow_right,.image_slider_arrow_left{
+    position: absolute;
+    z-index: 101;
+    height: 30px;
+    top: 50%;
+    border-radius: 30px;
+    background-color: rgba(151, 151, 149, 0.644);
+    cursor: pointer;
+}
+
+.image_slider_arrow_right{
+    right: 10px;
+}
+
+.image_slider_arrow_left{
+    left: 10px;
+}
+
+
+.turfInfo_host_page{
+  position: fixed;
+  top: 0;
+  left: -100vw;
+  right: 0;
+  bottom: 0;
+  background-color: black;
+  color: white;
+  z-index: 1100;
+  overflow-y: scroll;
+  transition: all 0.5s;
+  width: 0px;
+}
+
+.open{
+  left: 0;
+  width: 100%;
+}
+
+
+.turfInfo_host_page_close{
+  position: absolute;
+  z-index: 1101;
+  right: 10px;
+  top:10px;
+}
+
+.turfInfo_host_page_close_svg{
+  height: 50px;
+  min-width: 50px;
+  color: rgb(245, 245, 245);
+}
+
+.index_page_working_details_container_box{
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+}
+
+.index_page_working_details_container{
+  min-width: 330px;
+  max-width: 1000px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.working_container_div{
+  display: flex;
+  flex-direction: column;
+ justify-content: center;
+ align-items: center; 
+ font-size: 24px;
+ padding: 20px;
+ text-align: center;
+ padding-top:40px;
+ padding-bottom:40px;
+ margin: 30px;
+ border-radius: 10px;
+ box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.541);
+}
+
+.howItWorks_heading_icon{
+  margin-left: 10px;
+  height: 50px;
+  color: green;
+}
+
+.howItWorks_icon{
+  height: 80px;
+}
+
+  /* ----------------------------------------------------------------------------------------------------------------------------------------- */
+  /*---------------------------- MEDIA QUERIES CSS-------------------------------------------------------------------------------------------------- */
+  /* ----------------------------------------------------------------------------------------------------------------------------------------- */
+  
+  
+  @media only screen and (min-width: 900px) {
+    .header_find_game_btn, .header_host_game_btn{
+      margin-left: 30px;
+      display: block;
+    }
+  
+    .header_user_greeting{
+      display: block;
+      margin-right: 30px;
+    }
+  
+    .header_menu_option,.mobile_menu{
+      display: none;
+    }
+    
+    .turfInfo_host_page{
+      width: 90vw; 
+    }
+  }
+  
+  
+  @media only screen and (min-width: 550px) and (max-width: 1200px){
+    .index_page_img_content{
+      left: 5%;
+      top: 30%;
+    }
+  
+  }
+  
+  @media only screen and (min-width:700px) and (max-width:1100px){
+    .index_page_turf_container_slider{
+      grid-template-columns: 1fr 1fr;
+    }
+
+    
+  }
+  
+  @media only screen and (min-width: 1101px) and (max-width:1600px){
+    
+    .index_page_turf_container_slider{
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    
+  }
+  
+  @media only screen and (min-width: 1601px) {
+    
+    .index_page_turf_container_slider{
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+  }
+  
+  @media only screen and (min-width: 1101px) {
+    .index_page_img_content{
+      left: 10%;
+    }
+  
+    .index_page_img_text-content_line1{
+      font-size: 58px;
+      font-weight: 800;
+    }
+    
+    .index_page_img_text-content_line2{
+      font-size: 24px;
+      font-weight: 500;
+    }
+  
+    .index_page_img_feature_content{
+      display: block;
+      top: 20%;
+      right: 10%;
+    }
+  
+  } 
+  
+  @media only screen and (min-width: 1300px) {
+    
+    
+    .turfInfo_host_page{
+      width: 1200px; 
+    }
+  }

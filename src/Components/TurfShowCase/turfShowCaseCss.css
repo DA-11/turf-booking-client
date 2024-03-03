@@ -1,0 +1,18 @@
+.turfShowCase_Container{
+    padding-top: 80px;
+    display: flex;
+    justify-content: center;
+}
+
+.turfShowCase_Container_box{
+    display: flex;
+    flex-direction: column;
+}
+
+.turfShowCase_Container_search{
+    margin-bottom: 10px;
+}
+
+.index_page_turf_container_slider{
+    
+}

@@ -1,0 +1,226 @@
+
+.header_wrapper{
+    position: fixed;
+    width: 100vw;
+    z-index: 1001;
+    background-image: linear-gradient(120deg, #d4fc79 0%, #96e6a1 100%);
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    
+  }
+  
+  .header{
+    width: 100%;
+    max-width: 1450px;
+    color: rgba(0, 0, 0, 0.938);
+    font-size: 24px;
+    font-weight: 600;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+  }
+  
+  .header_options{
+    padding: 20px;
+    display: flex;
+  }
+  
+  .header_find_game_btn, .header_host_game_btn,.header_user_greeting{
+    display: none;
+  }
+  
+  .header_menu_option{
+    margin-left: 30px;
+    background-color: transparent;
+  }
+  
+  .userBadge,.log_in_icon_contaniner{
+    display: flex;
+    align-items: center;
+    padding-right: 20px;
+  }
+
+  .log_in_icon_svg{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .log_in_icon_text{
+    font-size: 12px;
+  }
+  
+  .index_page_img_feature_content{
+  
+  }
+  
+  .header_user_photo_container{
+    width: 45px;
+    height: 45px;
+    border-radius: 120px;
+    overflow: hidden;
+  }
+  
+  .header_user_photo{
+    width: 100%;
+    height: 100%;
+    object-fit:cover;
+  }
+  
+  
+  /* ----------------------------------------------------------------------------------------------------------------------------------------- */
+  /*---------------------------- HEADER MOBILE MENU CSS-------------------------------------------------------------------------------------------------- */
+  /* ----------------------------------------------------------------------------------------------------------------------------------------- */
+  
+  .mobile_menu_closed{
+    display: none;
+  }
+  
+  .mobile_menu{
+    position: fixed;
+    border-top: 2px solid black;
+    background-image: linear-gradient(120deg, #d4fc79 0%, #96e6a1 100%);
+    color: rgb(7, 7, 7);
+    left: -100vw;
+    top: 70px;
+    z-index: 1001;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    transition: all 0.5s;
+  }
+  
+  .open{
+    left: 0;
+  }
+  
+  .mobile_menu_btns{
+    margin-top: -40px;
+  }
+  
+  .mobile_menu_find_game_btn,
+  .mobile_menu_host_game_btn,
+  .mobile_menu_about_us_btn{
+    width: 100%;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 40px;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    font-style: italic;
+    padding-top:10px;
+    padding-bottom: 10px;
+  }
+  
+  .mobile_menu_svg{
+    width: 30px;
+    height: 30px;
+  }
+  
+  .mobile_menu_social_media_row{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 600;
+  }
+  
+  .mobile_menu_social_media_row_svgs{
+    display: flex;
+  }
+  
+  .mobile_menu_social_media_row_icon{
+    padding: 20px;
+  }
+  
+.userInfoContainer{
+  display: fixed;
+  z-index:1003;
+  position: absolute;
+  font-size: 16px;
+  top: 80px;
+  right: 10%;
+}
+
+.userInfoContainer_logout_btn{
+  display: flex;
+  align-items:center;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.753);
+  border-radius: 10px;
+}
+  
+@media only screen and (min-width: 900px) {
+    .header_find_game_btn, .header_host_game_btn{
+      margin-left: 30px;
+      display: block;
+    }
+  
+    .header_user_greeting{
+      display: block;
+      margin-right: 30px;
+    }
+  
+    .header_menu_option,.mobile_menu{
+      display: none;
+    }
+  
+  }
+  
+  
+  @media only screen and (min-width: 550px) and (max-width: 1200px){
+    .index_page_img_content{
+      left: 5%;
+      top: 30%;
+    }
+  
+  }
+  
+  @media only screen and (min-width:700px) and (max-width:1100px){
+    .index_page_turf_container_slider{
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  
+  @media only screen and (min-width: 1101px) and (max-width:1600px){
+    
+    .index_page_turf_container_slider{
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+  
+  @media only screen and (min-width: 1601px) {
+    
+    .index_page_turf_container_slider{
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+  }
+  
+  @media only screen and (min-width: 1101px) {
+    .index_page_img_content{
+      left: 10%;
+    }
+  
+    .index_page_img_text-content_line1{
+      font-size: 58px;
+      font-weight: 800;
+    }
+    
+    .index_page_img_text-content_line2{
+      font-size: 24px;
+      font-weight: 500;
+    }
+  
+    .index_page_img_feature_content{
+      display: block;
+      top: 20%;
+      right: 10%;
+    }
+  
+  } 
+  
+  
