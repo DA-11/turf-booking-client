@@ -1,10 +1,123 @@
-body{
+body,p{
   margin: 0;
   padding: 0;
-  font-family: "Outfit", sans-serif;
-  
+  font-family: "Outfit", sans-serif; 
 }
 
+.chat_page_container_box{
+  padding-top: 70px;
+}
+
+.chat_container{
+  border: 1px solid red;
+  position: relative;
+  height: 80vh;
+}
+.chat{
+  border: 1px solid blue;
+}
+
+
+.message__container{
+  position: absolute;
+  top: 20px;
+  bottom: 100px;
+  border: 1px solid black;
+  left: 20px;
+  right: 0px;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+.chat_bar_container_box{
+  padding-top: 80px;
+  display: flex;
+  justify-content: center;
+}
+
+.chat_bar_container{
+  border: 1px solid black;
+  border-radius: 100px;
+  /* width: 90vw;
+  max-width: 530px; */
+}
+
+.chat_bar_friend_container{
+  display: grid;
+  grid-template-columns: 2fr 10fr;
+  height: 50px;
+}
+
+.chat_friendLogo{
+  border: 1px solid black;
+  height: 100%;
+  font-size: 24px;
+  border-radius: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.chat_friendName{
+  padding-left: 20px;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  text-align: center;
+  font-size: 24px;
+}
+
+.chat__footer{
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  left: 0px;
+}
+
+.chat_footer_form{
+  display: flex;
+}
+
+.file_upload_label{
+ border: 1px solid black;
+}
+
+.file_upload_input{
+  display: none;
+}
+
+.file_upload_icon{
+  display: flex;
+  align-items: center;
+}
+
+.chat_footer_icons{
+  height: 22px;
+  width: 22px;
+}
+
+.message__chats{
+  display: flex;
+}
+
+.message__compartment_friend,
+.message__compartment_user{
+ 
+  border: 1px solid black;
+  margin: 10px;
+  padding: 6px;
+  border-radius: 10px;
+  background-color: aqua;
+}
+
+.message__compartment_user{
+  margin-left: auto;
+  background-color: greenyellow;
+}
+
+.message_friendname{
+  font-size: 12px;
+}
 
 /* ----------------------------------------------------------------------------------------------------------------------------------------- */
 /*---------------------------- HEADER CSS-------------------------------------------------------------------------------------------------- */

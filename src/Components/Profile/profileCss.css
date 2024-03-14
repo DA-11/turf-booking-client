@@ -146,6 +146,7 @@
 }
 
 .request_approver_btns{
+    margin-top: 10px;
     display: flex;
     justify-content: space-evenly;
 }
@@ -170,4 +171,27 @@
 
 .games_btn{
     border: 1px solid black;
+}
+
+.gameInfo_Container_Request_heading{
+    padding: 10px;
+    background-color: rgb(76, 151, 221);
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+}
+
+.green_container_bg{
+    background-color: rgb(132, 194, 132);
+}
+
+.red_container_bg{
+    background-color: rgb(194, 132, 132);
+}
+
+.pending_req_container{
+    color: rgb(76, 151, 221);
+    font-size: 20px;
+    text-align: center;
+   margin-top: 10px ;
 }

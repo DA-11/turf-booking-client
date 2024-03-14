@@ -12,8 +12,13 @@ import TurfUpload from './Components/TurfUpload/TurfUpload';
 import TurfInfo from './Components/TurfInfo/TurfInfo';
 import GameDetails from './Components/GameDetails/gameDetails';
 import TurfShowCase from './Components/TurfShowCase/TurfShowCase';
+import HostedGames from './Components/Profile/HostedGames';
+import RequestedGames from './Components/Profile/RequestedGames';
+import ChatPage from './Components/Chat/ChatPage';
+import socketIO from 'socket.io-client';
+import ChatBar from './Components/Chat/ChatBar';
 
-
+const socket = socketIO.connect('http://localhost:4100')
 axios.defaults.baseURL = 'http://127.0.0.1:5003';
 axios.defaults.withCredentials = true;
 
@@ -31,6 +36,10 @@ function App() {
           <Route path='/turfInfo/:id' element={<TurfInfo/>}></Route>
           <Route path='/turfShowCase' element={<TurfShowCase/>}></Route>
           <Route path='/gameDetails' element={<GameDetails/>}></Route>
+          <Route path='/hostedGames' element={<HostedGames/>}></Route>
+          <Route path='/requestedGames' element={<RequestedGames/>}></Route>
+          <Route path='/chats' element={<ChatBar></ChatBar>}></Route>
+          <Route path='/chat/:friendUserName' element={<ChatPage socket={socket}/>}></Route>
         </Route>
         <Route path='/login' element={<LoginRegister/>}></Route>
       </Routes>

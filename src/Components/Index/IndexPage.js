@@ -1,4 +1,5 @@
 import IndexPageImageContainerComponent from "../../SubComponents/IndexPageImageContainerComponent";
+import Footer from "../Footer/Footer";
 import IndexPageTurfComponent from "./IndexPageTurfComponent";
 import './indexPageCss.css'
 
@@ -51,6 +52,8 @@ export default function IndexPage(){
 
                 </div>
             </div>
+
+            <Footer></Footer>
         </>
        
     )

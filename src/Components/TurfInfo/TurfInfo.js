@@ -8,8 +8,6 @@ import { UserContext } from '../../UserContext';
 
 export default function TurfInfo({turf_id}){
 
-    
-
     const id = turf_id;
     const[data,setData] = useState(null);
     
@@ -47,6 +45,10 @@ export default function TurfInfo({turf_id}){
             alert("Please Login to Host a Game");
         } else {
 
+            console.log(gameDate);
+            console.log(fromTime);
+            console.log(toTime);
+            
             const hostData = {
                 "username":user.username,
                 "turfName" : data.name,

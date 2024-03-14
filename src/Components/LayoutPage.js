@@ -8,7 +8,7 @@ export default function LayoutPage(){
         <>
             <Header></Header>
             <Outlet></Outlet>
-            <Footer></Footer>
+            {/* <Footer></Footer> */}
         </>
     )
 }
