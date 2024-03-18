@@ -81,7 +81,7 @@
 .profile_container_logout{
     display: flex;
     
-    background-color: tomato;
+    background-color: rgba(255, 99, 71, 0.712);
     padding: 8px;
     color: black;
     font-weight: 600;
@@ -164,13 +164,17 @@
 }
 
 .user_hosted_games_btns{
+    
     display: flex;
     justify-content: space-evenly;
-    border: 1px solid black;
+    
 }
 
 .games_btn{
     border: 1px solid black;
+    padding: 8px;
+    font-size: 18px;
+    margin: 10px 0px 6px 0px;
 }
 
 .gameInfo_Container_Request_heading{
@@ -194,4 +198,14 @@
     font-size: 20px;
     text-align: center;
    margin-top: 10px ;
+}
+
+.requestGames_findgame_option{
+    text-align: center;
+    font-size:24px;
+}
+
+.hostedgames_host_game_option{
+    text-align: center;
+    font-size: 24px;
 }

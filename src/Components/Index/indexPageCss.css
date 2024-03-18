@@ -93,7 +93,7 @@
     row-gap: 30px;
     column-gap: 60px;
     padding: 20px;
-    border: 1px solid black;
+    /* border: 1px solid black; */
   }
   
   .index_page_turf_Container_Img_slider_Container{
@@ -193,39 +193,6 @@
 }
 
 
-.turfInfo_host_page{
-  position: fixed;
-  top: 0;
-  left: -100vw;
-  right: 0;
-  bottom: 0;
-  background-color: black;
-  color: white;
-  z-index: 1100;
-  overflow-y: scroll;
-  transition: all 0.5s;
-  width: 0px;
-}
-
-.open{
-  left: 0;
-  width: 100%;
-}
-
-
-.turfInfo_host_page_close{
-  position: absolute;
-  z-index: 1101;
-  right: 10px;
-  top:10px;
-}
-
-.turfInfo_host_page_close_svg{
-  height: 50px;
-  min-width: 50px;
-  color: rgb(245, 245, 245);
-}
-
 .index_page_working_details_container_box{
   display: flex;
   justify-content: center;
@@ -288,6 +255,11 @@
     
     .turfInfo_host_page{
       width: 90vw; 
+    }
+
+    .index_page_working_details_container_{
+      display: flex;
+      flex-direction: row;
     }
   }
   

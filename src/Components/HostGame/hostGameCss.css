@@ -11,6 +11,7 @@
 .step_form_heading{
     font-size: 24px;
     text-align: center;
+    
 }
 
 .date_time_selector_container{
@@ -21,6 +22,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
+    /* margin: 0px 5px 0px 5px; */
 }
 
 .time_slot_duration_label{
@@ -34,6 +37,7 @@
     justify-content: center;
     font-size: 20px;
     margin-bottom: 10px;
+    align-items: center;
 }
 
 .time_slot_duration_mins_container{
@@ -45,14 +49,118 @@
     display: flex;
     justify-content: space-evenly;
     font-size: 20px;   
+    width: 100%;
 }
 
 .prev_step_btn,.next_step_btn{
-    border: 1px solid black;
+    margin: 10px 0px 10px 0px;
+    border: 1px solid #ffffff;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 22px;
+    background-color: rgba(47, 158, 32, 0.808);
+    color:white;
 }
 
 .time_slot_choice_container{
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+
+.player_count_container{
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+
+}
+
+.increment_timeSlotsize_container,
+.decrement_timeSlotsize_container{
+    padding: 4px 6px 4px 6px;
+    background-color: rgba(47, 158, 32, 0.808);
+    border: none;
+    border-radius: 40px;
+}
+
+.minute_btn{
+    height: 24px;
+    color: white;
+}
+
+.players_choice_label{
+    font-size: 24px;
+    margin-bottom: 4px;
+}
+
+.players_choice_label_input{
+    padding: 6px;
+    width: 100%;
+    font-size: 18px;
+}
+
+.hostGame_booking_btns{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    font-size: 20px;
+}
+
+
+.hostGame_booking_btn_booked,
+.hostGame_booking_btn_not_booked{
+    margin-right: 30px;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid gray;
+}
+
+.hostGame_booking_btn_bg{
+    background-color: rgba(96, 202, 34, 0.733);
+    border: none;
+}
+
+.preview_info_container{
+    margin-top: 20px;
+}
+
+.preview_info_div_container{
+    margin: 6px 0px 6px 0px;
+}
+
+.preview_info_label{
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.preview_info_detail{
+    color: gray;
+    font-size: 16px;
+}
+
+.edit_info_btn{
+    display: flex;
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    background-color:  rgb(89, 201, 24);;
+    color: white;
+}
+
+.edit_info_btn_icon{
+    height: 20px;
+    margin-left: 10px;
+}
+
+.prev_next_btns_container{
+    display: flex;
+    align-items: center;
+}
+
+.hostGame_loading_info{
+    padding: 10px;
+    font-size: 18px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 5px rgba(96, 202, 34, 0.733);
+    margin: 6px 0px 10px 0px;
 }

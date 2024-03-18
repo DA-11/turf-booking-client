@@ -2,9 +2,8 @@ import { useContext, useEffect, useState } from 'react';
 import './turfInfoCss.css'
 import { useParams } from "react-router-dom"
 import axios from 'axios';
-import TimePicker from './TimePicker';
 import { UserContext } from '../../UserContext';
-
+import { useNavigate } from 'react-router-dom';
 
 export default function TurfInfo({turf_id}){
 
@@ -20,8 +19,12 @@ export default function TurfInfo({turf_id}){
     const[price,setPrice] = useState(1000);
 
     const[turfBooked,setTurfBooked] = useState(false);
-    
+
+    const[viewImagesPage,SetViewImagesPage] = useState(false);
+    const[photoIdx,setPhotoIdx] = useState(0);
+
     const {user} = useContext(UserContext)
+    const navigate = useNavigate();
 
     useEffect(() => {
         axios.get('/turf/getOneById',{
@@ -72,30 +75,66 @@ export default function TurfInfo({turf_id}){
             console.log(hostData);
         }
     }   
-   
+    
+    function handleImageIndex(val){
+
+        const len = data.photos.length;
+        const currentIdx = photoIdx + (val);
+
+        if(currentIdx >= 0 && currentIdx < len){
+            setPhotoIdx(currentIdx);
+        }
+    }
 
     return (
+
+        <>
+         
+         {viewImagesPage && viewImagesPage === true && (
+            <div className='view_images_page'>
+                <div className='close_view_images_page' onClick={() => {SetViewImagesPage(false)}}>
+                    X
+                </div>
+
+                <div className='choose_left_image_option' onClick={() => {handleImageIndex(-1)}}>
+                    {'<'}
+                </div>
+                
+                <div className='choose_right_image_option' onClick={() => {handleImageIndex(1)}}>
+                    {'>'}
+                </div>
+
+                <div className='view_images_page_gallery'>
+                    {data && data.photos && data.photos.length > 0 && (
+                        <img src={data.photos[photoIdx]} className='turfInfo_Container_Img_slider_Container_img'></img>
+                    )}
+                </div>
+            </div>
+         )}
+        
         <div className="turfInfo_Container_box">
             <div className="turfInfo_Container"> 
                 
                 <div className='turfInfo_Container_Img_slider_Container'>
                     {data && (
-                        <div className='turfInfo_Container_name_Container'>
-                            {data.name}
+                        <div className='turfInfo_Container_view_images_Container' onClick={() => {SetViewImagesPage(true)}}>
+                            View Images
                         </div>
                     )}
-                    {/* {photos && photos.length > 0 && (
-                        <img src={photos[0]} className='turfInfo_Container_Img_slider_Container_img'></img>
-                    )} */}
-                    <img src='https://www.powerleague.com/wp-content/uploads/2022/10/FIND-1024x576.webp' className='turfInfo_Container_Img_slider_Container_img'></img>
+                    {data && data.photos && data.photos.length > 0 && (
+                        <img src={data.photos[0]} className='turfInfo_Container_Img_slider_Container_img'></img>
+                    )}
+                    {/* <img src='https://www.powerleague.com/wp-content/uploads/2022/10/FIND-1024x576.webp' className='turfInfo_Container_Img_slider_Container_img'></img> */}
                 </div>        
             
                 {data && (
                 <div className='turfInfo_Container_information_Container'>
-                    {/* <div className='turfInfo_Container_name_Container'>
+                    
+                    <div className='turfInfo_Container_name_Container'>
                         {data.name}
-                    </div> */}
+                    </div>
 
+                    
                     <div className='turfInfo_Container_location_Container'>
                         <div className='turfInfo_Container_location_Container_2'>
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="turfInfo_Container_location_Container_svg">
@@ -115,13 +154,19 @@ export default function TurfInfo({turf_id}){
                     </div>
 
                     <div className='turfInfo_Container_games_Container'>
-                    {data.gamesAvailable && data.gamesAvailable.length > 0 && data.gamesAvailable.map((game) => (
-                        <div className='turfInfo_Container_game'>{game}</div>        
-                    ))}
+                    
+                        {data.gamesAvailable && data.gamesAvailable.length > 0 && data.gamesAvailable.map((game) => (
+                            <div className='turfInfo_Container_game'>{game}</div>        
+                        ))}
+                    </div>
+
+                    <div className='host_here_option_container'>
+                        <div className='host_here_question_container'>Have a Booking here?</div>
+                        <div className='host_here_btn' onClick={() => {navigate(`/hostGame/${data._id}`)}}>Host here</div>
                     </div>
                 
-                <div className='slot_check_container'>
-                    <div className="turfInfo_Container_slot_heading">Host Game</div>
+                    {/* <div className='slot_check_container'>
+                        <div className="turfInfo_Container_slot_heading">Host Game</div>
                         
                         <div className='turfInfo_form_Container'>
                         <form className='turfInfo_Contianer_slot_availability_form' onSubmit={handleHostGame}>
@@ -181,7 +226,7 @@ export default function TurfInfo({turf_id}){
 
                         
 
-                    </div>
+                    </div> */}
                 
                     </div>
                 )}
@@ -191,5 +236,6 @@ export default function TurfInfo({turf_id}){
             </div>
             
         </div>
+        </>
     )
 }

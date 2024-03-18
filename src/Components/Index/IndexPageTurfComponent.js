@@ -9,7 +9,8 @@ export default function IndexPageTurfComponent(){
     
     const[turfInfo,setTurfInfo] = useState([]);
     const[showCaseTurfs,setShowCaseTurfs] = useState([]);
-    
+    const navigate = useNavigate();
+
     useEffect(() => {
         
         axios.get('/turf/getAll').then((response) => {
@@ -26,7 +27,7 @@ export default function IndexPageTurfComponent(){
     return (
         <>
 
-        <div className="index_page_turf_container_slider">
+        <div className="index_page_turf_container_slider" onClick={() => {navigate('/turfShowCase')}}>
 
             {turfInfo.map((turf) => (
                 <div className="index_page_turf_Container_Img_slider_Container" key={turf._id} >

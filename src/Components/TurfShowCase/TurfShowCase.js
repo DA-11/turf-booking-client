@@ -1,6 +1,7 @@
 import ImageSilder from "../Index/ImageSlider";
 import { useState,useEffect } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 import './turfShowCaseCss.css'
 import TurfInfo from "../TurfInfo/TurfInfo";
 
@@ -11,6 +12,7 @@ export default function TurfShowCase(){
     const[openTurfHostPage,setOpenTurfHostPage] = useState(false);
     const[currentTurfId,setcurrentTurfId] = useState('');
 
+    
     useEffect(() => {
         
         axios.get('/turf/getAll').then((response) => {
@@ -49,20 +51,26 @@ export default function TurfShowCase(){
 
         <div className={openTurfHostPage ? "turfInfo_host_page open" : "turfInfo_host_page"}>
             {/* <TurfInfo turf_id={currentTurfId}></TurfInfo> */}
-            <TurfInfo turf_id={currentTurfId}></TurfInfo>
-            <div className="turfInfo_host_page_close" onClick={() => {setOpenTurfHostPage(false)}}>
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="turfInfo_host_page_close_svg">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
-                </svg>
-            </div>
+            <TurfInfo turf_id={currentTurfId} ></TurfInfo>
+            {openTurfHostPage && openTurfHostPage === true && (
+                <div className="turfInfo_host_page_close" onClick={() => {setOpenTurfHostPage(false)}}>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="turfInfo_host_page_close_svg">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
+                    </svg>
+                </div>
+            )}
         </div>
         
         <div className="turfShowCase_Container">
 
             <div className="turfShowCase_Container_box">
             <div className="turfShowCase_Container_search">
-                <input type="text" placeholder="search turf name" onChange={(e) => {setSearchInput(e.target.value)}}></input>
-                <button onClick={getSearchResult}>Search</button>
+                <input className="turfShowCase_search_input" type="text" placeholder="search turf name" onChange={(e) => {setSearchInput(e.target.value)}}></input>
+                <button className="turfShowCase_game_seach_btn"  onClick={getSearchResult}>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="search_icon">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+                        </svg>
+                </button>
             </div>
 
             <div className="index_page_turf_container_slider">

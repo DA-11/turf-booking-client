@@ -32,6 +32,7 @@ function App() {
           <Route path='/profile' element={<Profile/>}></Route>
           <Route path='/findGame' element={<FindGame/>}></Route>
           <Route path='/hostGame' element={<HostGame/>}></Route>
+          <Route path='/hostGame/:turf_id' element={<HostGame/>}></Route>
           <Route path='/turfUpload' element={<TurfUpload/>}></Route>
           <Route path='/turfInfo/:id' element={<TurfInfo/>}></Route>
           <Route path='/turfShowCase' element={<TurfShowCase/>}></Route>

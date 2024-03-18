@@ -1,12 +1,13 @@
 import axios from "axios";
 import { useEffect, useState } from "react"
-
+import { useNavigate } from "react-router-dom";
 
 export default function RequestedGames(){
     const[userPendingReqSectionOpen,setUserPendingReqSectionOpen] = useState(true);
     const[userReqHistorySectionOpen,setUserReqHistorySectionOpen] = useState(false);
     const[userGameswithReq,setUserGamesWithReq] = useState([]);
 
+    const navigate = useNavigate();
     useEffect(() => {
         axios.get('/gameRequest/getRequestingUserGames').then((response) => {
             console.log(response.data)
@@ -81,6 +82,22 @@ export default function RequestedGames(){
             return game.requestStatus === "pending"
         })
 
+        if(pendingGames.length === 0){
+            return (
+                <>
+                    <div className="gameInfo_Container">
+                            
+                    <div className="gameInfo_Container_Request_heading">
+                        <div>You have no Pending request</div>                   
+                    </div>
+    
+                    </div>
+
+                    <div className="requestGames_findgame_option" onClick={() => {navigate('/findGame')}}>Find games</div>
+                </>
+            )
+        }
+
         return pendingGames.map((game) => (
            
             <div className="gameInfo_Container">
@@ -139,6 +156,18 @@ export default function RequestedGames(){
         const reqHistory = userGameswithReq.filter((game) => {
             return game.requestStatus !== "pending";
         })
+
+        if(reqHistory.length === 0){
+            return (
+                <div className="gameInfo_Container">
+                        
+                <div className="gameInfo_Container_Request_heading">
+                    <div>No Requests Resolved</div>                   
+                </div>
+                
+            </div>
+            )
+        }
         
         return reqHistory.map((game) => (
             <div className={game.requestStatus === "approved" ? "gameInfo_Container green_container_bg" : "gameInfo_Container red_container_bg"}>

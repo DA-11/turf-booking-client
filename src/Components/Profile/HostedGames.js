@@ -1,11 +1,13 @@
 import axios from "axios";
 import { useEffect, useState } from "react"
-
+import { useNavigate } from "react-router-dom";
 export default function HostedGames(){
     
     const[userPendingReqSectionOpen,setUserPendingReqSectionOpen] = useState(true);
     const[userReqHistorySectionOpen,setUserReqHistorySectionOpen] = useState(false);
     const[userGameswithReq,setUserGamesWithReq] = useState([]);
+
+    const navigate = useNavigate();
 
     useEffect(() => {
         axios.get('/gameRequest/getHostingUserGames').then((response) => {
@@ -110,6 +112,23 @@ export default function HostedGames(){
             return game.requestStatus === "pending"
         })
 
+        if(pendingGames.length === 0){
+            return (
+
+                <>
+                    <div className="gameInfo_Container">
+                            
+                    <div className="gameInfo_Container_Request_heading">
+                        <div>No pending Requests Found</div>                   
+                    </div>
+
+                       
+                    </div>
+                    <div className="hostedgames_host_game_option" onClick={() => {navigate('/hostGame')}}>Host Game</div> 
+                </>
+            )
+        }
+
         return pendingGames.map((game) => (
            
             <div className="gameInfo_Container">
@@ -157,7 +176,7 @@ export default function HostedGames(){
                     </div>
 
                 </div>
-                </div>
+            </div>
           
             
         )
@@ -169,6 +188,18 @@ export default function HostedGames(){
         const reqHistory = userGameswithReq.filter((game) => {
             return game.requestStatus !== "pending";
         })
+
+        if(reqHistory.length === 0){
+            return (
+                <div className="gameInfo_Container">
+                        
+                <div className="gameInfo_Container_Request_heading">
+                    <div>No Request History</div>                   
+                </div>
+                
+            </div>
+            )
+        }
         
         return reqHistory.map((game) => (
             <div className={game.requestStatus === "approved" ? "gameInfo_Container green_container_bg" : "gameInfo_Container red_container_bg"}>
@@ -227,7 +258,6 @@ export default function HostedGames(){
                 <div className='games_btn' onClick={() => {handleSectionVisibility('userPendingReq')}}>Pending Requests</div>
                 <div className='games_btn' onClick={() => {handleSectionVisibility('userReqHistory')}}>Requests History</div>
             </div>
-
             
 
             {userPendingReqSectionOpen && userPendingReqSectionOpen === true && (

@@ -8,7 +8,7 @@
     width: 90vw;
     height: 200px;
     margin-bottom: 20px;
-    border: 1px solid black;
+   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.521);
     border-radius: 10px;
     overflow: hidden;
     max-width: 700px;
@@ -44,4 +44,48 @@
 .chooseTur_turf_container_price{
     font-size: 24px;
     color: green;
+}
+
+.turf_not_found_question{
+    font-size: 24px;
+    text-align: center;
+    margin: 10px 0px 10px 0px;
+}
+
+.turf_name_input_label,
+.turf_location_input_label{
+    font-size: 20px;
+    margin: 10px 0px 5px 0px;
+}
+
+.turf_location_input,
+.turf_name_input{
+    font-size: 18px;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.521);
+    padding: 10px;
+    width: 90%;
+}
+
+.turf_not_found_container{
+    margin: 10px 0px 10px 0px;
+}
+
+
+.selectedTurf_bg{
+    background-color: rgba(0, 128, 0, 0.267);
+    color: white;
+}
+
+.selected_icon{
+    height: 30px;
+    margin-left: 20px;
+    color: black;
+}
+
+.selected_turf_container{
+    display: flex;
+    align-items: center;
+    color: black;
 }
