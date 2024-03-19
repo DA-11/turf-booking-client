@@ -44,6 +44,7 @@ export default function ChatBar(){
     return (
         <div className="chat_bar_container_box">
             <div className="chat_bar_container">
+                <div className="chats_page">Chats</div>
                 {chats && chats.length > 0 && chats.map((chat) => (
                     <div key={chat._id} className="chat_bar_friend_container" onClick={() => {navigateToChat(chat)}}>
                         {chat_friend(chat)}
