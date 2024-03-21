@@ -28,17 +28,38 @@ body,p{
   outline: none;
 }
 
-.chat{
+.friendName_container{
   box-shadow: 1px 1px 5px rgba(9, 84, 94, 0.658);
   padding: 10px;
   font-size: 24px;  
   border-radius: 50px;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.938);
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  left: 0px;
+  z-index: 1000;
+}
+
+.go_back_icon{
+  height: 30px;
+  margin-right: 10px;
+  border-radius: 20px;
+  align-items: center;
+  box-shadow: 1px 1px 5px rgba(144, 180, 86, 0.938);
+  padding: 2px;
+}
+
+.back_icon_container{
+  display: flex;
+  align-items: center;
 }
 
 .message__container{
   position: absolute;
-  top: 50px;
+  top: 30px;
   bottom: 50px;
   left: 0px;
   right: 0px;

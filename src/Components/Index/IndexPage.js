@@ -2,14 +2,23 @@ import IndexPageImageContainerComponent from "../../SubComponents/IndexPageImage
 import Footer from "../Footer/Footer";
 import IndexPageTurfComponent from "./IndexPageTurfComponent";
 import './indexPageCss.css'
-
+import { UserContext } from '../../UserContext';
+import { useContext } from "react";
+import LiveRequests from "./LiveRequests";
 export default function IndexPage(){
+    
+    const{user,setUser,setGame} = useContext(UserContext);
+
     return(
        
         <>    
             <div className="index_page_img_container">        
                 <IndexPageImageContainerComponent></IndexPageImageContainerComponent>
             </div>
+
+            {user && user != null && (
+                <LiveRequests></LiveRequests>
+            )}
 
             <div className="index_page_turf_container">                
                 <div className="index_page_turf_container_heading">FIND AND EXPLORE NEW TURFS</div>

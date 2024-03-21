@@ -18,7 +18,7 @@ import ChatPage from './Components/Chat/ChatPage';
 import socketIO from 'socket.io-client';
 import ChatBar from './Components/Chat/ChatBar';
 
-const socket = socketIO.connect('http://localhost:4100')
+const socket = socketIO.connect('http://localhost:5003')
 axios.defaults.baseURL = 'http://127.0.0.1:5003';
 axios.defaults.withCredentials = true;
 

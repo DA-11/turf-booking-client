@@ -5,6 +5,7 @@ import ChatFooter from "./ChatFooter";
 import { UserContext } from '../../UserContext';
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 export default function ChatPage({socket}){
 
@@ -13,7 +14,7 @@ export default function ChatPage({socket}){
     const {friendUserName} = useParams();
     
     const{user} = useContext(UserContext);
-    
+    const navigate = useNavigate(); 
 
     useEffect(() => {
         //get and set messages
@@ -56,7 +57,14 @@ export default function ChatPage({socket}){
         <div className="chat_page_container_box">
             <div className="chat_container"> 
                 <div className="chat">
-                    <div className="friendName_container">{friendUserName}</div>
+                    <div className="friendName_container">
+                        <div className="back_icon_container" onClick={() => {navigate('/chats')}}>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="go_back_icon">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
+                            </svg>
+                        </div>
+                        <div>{friendUserName}</div>
+                    </div>
                     {/* <ChatBar/> */}
                     <div className="chat__main">
                         <ChatBody messages={messages} socket={socket} friendUserName={friendUserName}/>

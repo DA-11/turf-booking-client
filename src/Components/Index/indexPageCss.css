@@ -233,6 +233,36 @@
   height: 80px;
 }
 
+.live_request_container{
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+.live_request_navigate_section{
+  text-align: center;
+
+}
+
+.pending_req_container_heading{
+  text-align: center;
+  font-size: 24px;
+}
+
+.live_request_navigate_section{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  color: rgb(45, 107, 26);
+  text-decoration: underline;
+}
+
+.goto_request_page_icon{
+  margin-left: 10px;
+  height: 30px;
+}
+
   /* ----------------------------------------------------------------------------------------------------------------------------------------- */
   /*---------------------------- MEDIA QUERIES CSS-------------------------------------------------------------------------------------------------- */
   /* ----------------------------------------------------------------------------------------------------------------------------------------- */

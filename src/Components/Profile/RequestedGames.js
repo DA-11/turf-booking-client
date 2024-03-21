@@ -103,7 +103,7 @@ export default function RequestedGames(){
             <div className="gameInfo_Container">
                         
                 <div className="gameInfo_Container_Request_heading">
-                    <div>Request By :- {game.requestingUser}</div> 
+                    <div>Hosted By :- {game.hostingUser}</div> 
                     <div>{getMonthDateFromTime(game.gameData[0].fromTime)}</div>
                 </div>
                 <div className="gameInfo_Container_information">
@@ -172,18 +172,12 @@ export default function RequestedGames(){
         return reqHistory.map((game) => (
             <div className={game.requestStatus === "approved" ? "gameInfo_Container green_container_bg" : "gameInfo_Container red_container_bg"}>
                         
-                <div className="gameInfo_Container_Request_heading">
+                {/* <div className="gameInfo_Container_Request_heading"></div> */}
+                <div className={game.requestStatus === "approved" ? "gameInfo_Container_Request_heading green_heading_req" : "gameInfo_Container_Request_heading red_heading_req"}>
+                   
                     <div>Hosted By :- {game.hostingUser}</div> 
                     <div>{getMonthDateFromTime(game.gameData[0].fromTime)}</div>
                 </div>
-
-                {game.requestStatus === "approved" && (
-                    <div className="approved_req">Request Approved</div>
-                )}
-
-                {game.requestStatus === "declined" && (
-                    <div className="declined_req">Request Declined</div>
-                )}
 
                 <div className="gameInfo_Container_information">
                     <div className="gameInfo_Container_game"></div>
@@ -196,8 +190,6 @@ export default function RequestedGames(){
                             <div>
                                 {getTimeInFormat(game.gameData[0].fromTime.substring(11,16))} - {getTimeInFormat(game.gameData[0].toTime.substring(11,16))}
                             </div>
-
-                           
                         </div>
                     </div>
 
@@ -218,6 +210,20 @@ export default function RequestedGames(){
                         <div>{game.gameData[0].players} players Coming</div>    
                     </div>
 
+                    
+
+                    {game.requestStatus === "approved" && (
+                        <div className="pending_req_container approved_req_label">
+                            Request Approved
+                        </div>
+                    )}
+
+                    {game.requestStatus === "decline" && (
+                        <div className="pending_req_container declined_req_label">
+                            Request Declined
+                        </div>
+                    )}
+
                 </div>
                 </div>
         )
@@ -232,8 +238,8 @@ export default function RequestedGames(){
         <div className="user_hosted_games_container">
 
             <div className="user_hosted_games_btns">
-                <div className='games_btn' onClick={() => {handleSectionVisibility('userPendingReq')}}>Pending Requests</div>
-                <div className='games_btn' onClick={() => {handleSectionVisibility('userReqHistory')}}>Resolved Requests</div>
+                <div className={userPendingReqSectionOpen === true ? 'games_btn current_btn' : 'games_btn'} onClick={() => {handleSectionVisibility('userPendingReq')}}>Pending Requests</div>
+                <div className={userReqHistorySectionOpen === true ? 'games_btn current_btn' : 'games_btn'} onClick={() => {handleSectionVisibility('userReqHistory')}}>Resolved Requests</div>
             </div>
 
             
