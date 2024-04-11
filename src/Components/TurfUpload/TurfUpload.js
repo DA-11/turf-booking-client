@@ -19,6 +19,7 @@ export default function TurfUpload(){
     const[number,setNumber] = useState(null);
     const[additionalInfo,setAdditionalInfo] = useState('');
     const[photos,setPhotos] = useState([]);
+    const[mapLocation,setMapLocation] = useState('')
 
     function uploadTurf(e){
         e.preventDefault();
@@ -32,7 +33,8 @@ export default function TurfUpload(){
             perks,
             "contactNumber":number,
             additionalInfo,
-            photos
+            photos,
+            mapLocation
         }
 
         axios.post('http://localhost:5003/turf/create',data).then((response) => {
@@ -83,6 +85,15 @@ export default function TurfUpload(){
                             value={location} 
                             required
                             onChange={(e) => {setLocation(e.target.value)}}></input>
+                    </div>
+
+                    <div className='turf_upload_form_input_div'>
+                        <label className='turf_upload_form_label'>Map Location URL</label>
+                        <input type='text' 
+                            className='turf_upload_form_input' 
+                            value={mapLocation} 
+                            
+                            onChange={(e) => {setMapLocation(e.target.value)}}></input>
                     </div>
 
                     <div className='turf_upload_form_input_div'>

@@ -8,6 +8,8 @@ export default function FindGame(){
     
     const[games,setGames] = useState([]);
     const[serchInput,setSearchInput] = useState('');
+    const[showAlertWindow,setShowAlertWindow] = useState(false);
+    const[alertWindowMessage,setAlertwindowMessage] = useState('');
 
     const {user} = useContext(UserContext);
 
@@ -97,7 +99,7 @@ export default function FindGame(){
     function handleGameRequest(game){
         console.log(user)
         if(!user){
-            alert("Please login to Join a Game")
+            handleAlertWindow("Please login to Join a Game")
         } 
         // else if(game.username === user.username){
         //     alert("You Cannot request to be part of your game")
@@ -113,10 +115,10 @@ export default function FindGame(){
 
             axios.post('gameRequest/createGameRequest',requestData).then((response) => {
                 console.log(response.data);
-                alert("Request sent to host");
+                handleAlertWindow('Request sent to host');
             }).catch((err) => {
                 console.log(err);
-                alert(err.response.data.message)
+                handleAlertWindow(err.response.data.message);
             })
 
         }
@@ -126,7 +128,8 @@ export default function FindGame(){
     const redirectToChatPage = (friendUserName) => {
 
         if(!user){
-            alert("Please Login to Chat")
+            handleAlertWindow("Please Login to Chat")
+            
         } else {
             console.log(friendUserName);
 
@@ -144,9 +147,26 @@ export default function FindGame(){
         }
     }
 
+    function handleAlertWindow(msg){
+        setShowAlertWindow(true);
+        setAlertwindowMessage(msg)
+    }
+
     return (
         <div className="findGame_Container">
             <div className="findGame_Container_box">
+
+                {showAlertWindow && showAlertWindow === true && (
+                    <div className="alert_window_container">
+                        <div className="alert_window_message">{`${alertWindowMessage}`}</div>
+                        <div className="alert_window_close" onClick={() => {setShowAlertWindow(false)}}>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="alert_window_icon">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="m9.75 9.75 4.5 4.5m0-4.5-4.5 4.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                            </svg>
+
+                        </div>
+                    </div>
+                )}
 
                 <div className="gameInfo_Container_search">
                     <input className="find_game_search_input" type="text" placeholder="search turf name" onChange={(e) => {setSearchInput(e.target.value)}}></input>
@@ -210,17 +230,17 @@ export default function FindGame(){
                                     </div>
                                 </div>
                                 
-                                <div className="gameInfo_Container_join_game" onClick={() => {handleGameRequest(game)}}>
+                                <div className="gameInfo_Container_join_game" >
                                     {user && user.username === game.username && (
-                                        <div>See Requests</div>
+                                        <div onClick={() => {navigate('/hostedGames')}}>See Requests</div>
                                     )}
 
                                     {!user && (
-                                        <div>JOIN GAME</div>
+                                        <div onClick={() => {handleAlertWindow('Please Login to Join game')}}>JOIN GAME</div>
                                     )}
 
                                     {user && user.username !== game.username && (
-                                        <div>JOIN GAME</div>
+                                        <div onClick={() => {handleGameRequest(game)}}>JOIN GAME</div>
                                     )}
 
 

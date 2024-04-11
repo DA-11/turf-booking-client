@@ -5,7 +5,7 @@ import axios from 'axios';
 import { UserContext } from '../../UserContext';
 import { useNavigate } from 'react-router-dom';
 
-export default function TurfInfo({turf_id}){
+export default function TurfInfo({turf_id,hostPageVisible}){
 
     const id = turf_id;
     const[data,setData] = useState(null);
@@ -143,11 +143,15 @@ export default function TurfInfo({turf_id}){
                         </svg>
 
                         {data.location}
-                        
-                        
-                      
                         </div>
                     </div>
+
+                    {data && data.mapLocation && (
+                        <div className='turfInfo_Container_map_location_Container'>
+                            <iframe src={data.mapLocation} className='turfInfo_Container_map_location' style={{ border: 0 }} allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    )}
+
 
                     <div className='turfInfo_Container_price_Container'>
                         ₹ {data.pricePerHour}/Hour
@@ -160,10 +164,13 @@ export default function TurfInfo({turf_id}){
                         ))}
                     </div>
 
-                    <div className='host_here_option_container'>
-                        <div className='host_here_question_container'>Have a Booking here?</div>
-                        <div className='host_here_btn' onClick={() => {navigate(`/hostGame/${data._id}`)}}>Host here</div>
-                    </div>
+                    {hostPageVisible && hostPageVisible === true && (
+                        <div className='host_here_option_container'>
+                            <div className='host_here_question_container'>Have a Booking here?</div>
+                            <div className='host_here_btn' onClick={() => {navigate(`/hostGame/${data._id}`)}}>Host here</div>
+                        </div>
+                    )}
+                    
                 
                     {/* <div className='slot_check_container'>
                         <div className="turfInfo_Container_slot_heading">Host Game</div>

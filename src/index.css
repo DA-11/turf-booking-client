@@ -4,6 +4,54 @@ body,p{
   font-family: "Outfit", sans-serif; 
 }
 
+.logo,
+.header_find_game_btn,
+.header_host_game_btn,
+.header_user_photo_container,
+.header_menu_option,
+.index_page_turf_container_slider_item_information,
+.mobile_menu_find_game_btn,
+.mobile_menu_host_game_btn,
+.mobile_menu_about_us_btn,
+.find_game_seach_btn,
+.gameInfo_Container_host_info_chat_option,
+.gameInfo_Container_join_game,
+.host_game_btn_option,
+.request_approve_btn,
+.request_decline_btn,
+.games_btn,
+.log_in_icon_svg,
+.footer_business_host,
+.next_step_btn,
+.prev_step_btn,
+.increment_timeSlotsize_container,
+.decrement_timeSlotsize_container,
+.hostGame_booking_btn_booked,
+.hostGame_booking_btn_not_booked,
+.edit_info_btn,
+.see_turf_details_container,
+.turfShowCase_game_seach_btn,
+.profile_container_logout,
+.feature_btn_option,
+.back_icon_container,
+.chat_bar_friend_container,
+.file_upload_icon,
+.sendBtn,
+.choose_left_image_option,
+.choose_right_image_option,
+.close_view_images_page,
+.turfInfo_host_page_close,
+.turfInfo_Container_view_images_Container,
+.host_here_btn,
+.login_btn,
+.register_btn,
+.login_form_submit_btn,
+.register_form_submit_btn
+{
+  cursor: pointer;
+}
+
+
 .chat_page_container_box{
   padding-top: 70px;
   display: flex;

@@ -27,9 +27,9 @@ export default function IndexPageTurfComponent(){
     return (
         <>
 
-        <div className="index_page_turf_container_slider" onClick={() => {navigate('/turfShowCase')}}>
+        <div className="index_page_turf_container_slider">
 
-            {turfInfo.map((turf) => (
+            {turfInfo && turfInfo.length > 0 && turfInfo.map((turf) => (
                 <div className="index_page_turf_Container_Img_slider_Container" key={turf._id} >
                             
                     <div className="index_page_turf_container_slider_item_img_container">
@@ -41,7 +41,7 @@ export default function IndexPageTurfComponent(){
                     {/* <ImageSilder photos={turf.photos}></ImageSilder> */}
 
                     {/* <div className="index_page_turf_container_slider_item_information" onClick={() => {navigate(`/turfInfo/${turf._id}`)}}> */}
-                    <div className="index_page_turf_container_slider_item_information">
+                    <div className="index_page_turf_container_slider_item_information"  onClick={() => {navigate('/turfShowCase')}}>
                         <div className="index_page_turf_container_slider_item_information_name">{turf.name}</div>
                         
                         <div className="index_page_turf_container_slider_item_information_location">

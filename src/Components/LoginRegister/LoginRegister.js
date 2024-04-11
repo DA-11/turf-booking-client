@@ -139,8 +139,8 @@ export default function LoginRegisterModal(){
         <div className="login_register_form_container">
             <div style={{display:"flex",justifyContent:"center"}}>
                 <div className="login_register_form_container_register_login_btns">
-                    <div className="login_btn" onClick={() => {setLoginFormOpen(true)}}>Login</div>
-                    <div className="register_btn" onClick={() => {setLoginFormOpen(false)}}>Register</div>
+                    <div className={loginFormOpen === true ? "login_btn btn_pressed" : "login_btn"} onClick={() => {setLoginFormOpen(true)}}>Login</div>
+                    <div className={loginFormOpen === false ? "register_btn btn_pressed" : "register_btn"} onClick={() => {setLoginFormOpen(false)}}>Register</div>
                  </div>
             </div>
 

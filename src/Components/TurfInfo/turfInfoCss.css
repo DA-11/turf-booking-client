@@ -4,6 +4,8 @@
 
 .turfInfo_Container{
     overflow: hidden;
+    background-color: black;
+    color: white;
 }
 
 .turfInfo_Container_Img_slider_Container{
@@ -21,6 +23,8 @@
     width: 100%;
     object-fit: cover;
 }
+
+
 
 .turfInfo_Container_information_Container{
     margin: 10px;
@@ -169,13 +173,13 @@ label{
 
 .host_here_btn{
     padding: 10px;
-    border: 1px solid black;
+    border: 1px solid rgb(255, 253, 253);
 }
 
 .turfInfo_Container_name_Container{
    text-align: center;
    font-size: 24px;
-   color: rgb(0, 0, 0);
+   color: rgb(255, 254, 254);
 }
 
 .turfInfo_Container_games_Container{
@@ -238,5 +242,18 @@ label{
     
     left: 10px;
     top: 50%;
+    
+}
+
+.turfInfo_Container_map_location{
+    width: 100%;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    margin: 10px 0px 30px 0px;
+
+}
+
+.turfInfo_Container_map_location{
     
 }

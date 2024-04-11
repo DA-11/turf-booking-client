@@ -6,6 +6,7 @@ import axios from 'axios';
 import { UserContext } from '../../UserContext';
 import { useParams } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
+import TurfShowCase from '../TurfShowCase/TurfShowCase';
 export default function HostGame(){
 
     const {turf_id} = useParams();
@@ -189,6 +190,7 @@ export default function HostGame(){
                         <div className='step_form_heading'>Select Turf</div>
                         <div>
                             <ChooseTurf step={step} turfName={turfName} setStep={setStep} setTurfName={setTurfName} setLocation={setLocation}></ChooseTurf>
+                            {/* <TurfShowCase></TurfShowCase> */}
                         </div>
                         <div className='prev_next_btns_container'>
                             <div onClick={nextStep} className='next_step_btn'>Next</div>

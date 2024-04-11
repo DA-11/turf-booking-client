@@ -51,7 +51,7 @@ export default function TurfShowCase(){
 
         <div className={openTurfHostPage ? "turfInfo_host_page open" : "turfInfo_host_page"}>
             {/* <TurfInfo turf_id={currentTurfId}></TurfInfo> */}
-            <TurfInfo turf_id={currentTurfId} ></TurfInfo>
+            <TurfInfo turf_id={currentTurfId}  hostPageVisible={true}></TurfInfo>
             {openTurfHostPage && openTurfHostPage === true && (
                 <div className="turfInfo_host_page_close" onClick={() => {setOpenTurfHostPage(false)}}>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="turfInfo_host_page_close_svg">
