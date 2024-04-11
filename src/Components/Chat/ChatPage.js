@@ -21,7 +21,7 @@ export default function ChatPage({socket}){
 
         if(user){
         
-            axios.get('http://localhost:5003/chat/getChat', {params : {
+            axios.get('/chat/getChat', {params : {
             
                 "user1":user.username,
                 "user2":friendUserName

@@ -37,7 +37,7 @@ export default function TurfUpload(){
             mapLocation
         }
 
-        axios.post('http://localhost:5003/turf/create',data).then((response) => {
+        axios.post('/turf/create',data).then((response) => {
             console.log(response.data);
             alert("Uploaded Turf Details");
 

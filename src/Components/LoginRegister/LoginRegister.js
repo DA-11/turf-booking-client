@@ -32,7 +32,7 @@ export default function LoginRegisterModal(){
         }
 
         console.log(data);
-        axios.post('http://localhost:5003/uploads', data, {
+        axios.post('/uploads', data, {
             headers: {'Content-Type':'multipart/form-data'}
         }).then((response) => {
             console.log(response.data);

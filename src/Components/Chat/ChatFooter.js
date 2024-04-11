@@ -24,7 +24,7 @@ export default function ChatFooter({socket,friendUserName,roomId}){
 
             //setFileMessage("");
 
-            axios.post('http://localhost:5003/uploads',data,{
+            axios.post('/uploads',data,{
                 headers: {'Content-Type':'multipart/form-data'}
             }).then((response) => {
 
@@ -43,7 +43,7 @@ export default function ChatFooter({socket,friendUserName,roomId}){
 
                 console.log(messageObj);
 
-                axios.post('http://localhost:5003/message/create',messageObj).then((response) => {
+                axios.post('/message/create',messageObj).then((response) => {
                     console.log(response.data);
                     setFileLoaded(false);
                 }).catch((err) => {
@@ -74,7 +74,7 @@ export default function ChatFooter({socket,friendUserName,roomId}){
                 roomId
             }
 
-            axios.post('http://localhost:5003/message/create',messageObj).then((response) => {
+            axios.post('/message/create',messageObj).then((response) => {
                 console.log(response.data);
             }).catch((err) => {
                 console.log(err);

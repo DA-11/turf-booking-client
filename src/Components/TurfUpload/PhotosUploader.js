@@ -15,7 +15,7 @@ export default function PhotosUploader({photos,onChange,loading,setLoading}){
         }
 
         console.log(data);
-        axios.post('http://localhost:5003/uploads', data, {
+        axios.post('/uploads', data, {
             headers: {'Content-Type':'multipart/form-data'}
         }).then((response) => {
             onChange((prev) => {

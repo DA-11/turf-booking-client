@@ -26,7 +26,7 @@ export default function TurfUpdate(){
             return;
         }
 
-        axios.get('http://localhost:5003/turf/getOne',{id}).then((response) => {
+        axios.get('/turf/getOne',{id}).then((response) => {
             const data = response.data;
             setTurfName(data.turfName);
             setLocation(data.location);
