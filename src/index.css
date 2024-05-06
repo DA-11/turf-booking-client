@@ -107,7 +107,7 @@ body,p{
 
 .message__container{
   position: absolute;
-  top: 30px;
+  top: 60px;
   bottom: 50px;
   left: 0px;
   right: 0px;
@@ -316,6 +316,10 @@ body,p{
   .index_page_img_content{
     left: 5%;
     top: 30%;
+  }
+
+  .uploaded_images_container{
+    height: 300px;
   }
 
 }

@@ -19,10 +19,16 @@ export default function LoginRegisterModal(){
     const[photo,setPhoto] = useState('');
 
     const {user,setUser} = useContext(UserContext);
+
+    const[showAlertWindow,setShowAlertWindow] = useState(false);
+    const[alertWindowMessage,setAlertwindowMessage] = useState('');
+    const[loading,setLoading] = useState(false);
     
     const navigate = useNavigate()
 
     function uploadPhoto(e){
+
+        setLoading(true);
         const files = e.target.files;
         console.log(files);
 
@@ -37,8 +43,11 @@ export default function LoginRegisterModal(){
         }).then((response) => {
             console.log(response.data);
             setPhoto(response.data.photos[0]);
+            setLoading(false);
         }).catch((err) => {
+            handleAlertWindow(err.data.err.message)
             console.log(err.data.err.message)
+            setLoading(false);
         })
 
        
@@ -57,6 +66,7 @@ export default function LoginRegisterModal(){
             setUser(response.data);
             navigate("/");
         }).catch((err) => {
+            handleAlertWindow(`${err.message}, try logging in with your username`)
             console.log(err);
         })  
     } 
@@ -135,8 +145,15 @@ export default function LoginRegisterModal(){
 
     }
 
+    function handleAlertWindow(msg){
+        setShowAlertWindow(true);
+        setAlertwindowMessage(msg)
+    }
+
     return (
         <div className="login_register_form_container">
+
+           
             <div style={{display:"flex",justifyContent:"center"}}>
                 <div className="login_register_form_container_register_login_btns">
                     <div className={loginFormOpen === true ? "login_btn btn_pressed" : "login_btn"} onClick={() => {setLoginFormOpen(true)}}>Login</div>
@@ -154,6 +171,19 @@ export default function LoginRegisterModal(){
                                 }}
                         />
                 </div>
+
+                {showAlertWindow && showAlertWindow === true && (
+                <div className="alert_window_container">
+                    <div className="alert_window_message">{`${alertWindowMessage}`}</div>
+                    <div className="alert_window_close" onClick={() => {setShowAlertWindow(false)}}>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="alert_window_icon">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="m9.75 9.75 4.5 4.5m0-4.5-4.5 4.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                        </svg>
+
+                    </div>
+                </div>
+            )}
+
                 
                 {loginFormOpen === true && (
                     <div style={{display:"flex",justifyContent:"center"}}>
@@ -170,9 +200,9 @@ export default function LoginRegisterModal(){
                         </div>                
 
                         <div style={{textAlign:"center"}}>
-                            <button className="login_form_submit_btn">Login</button>
-                        
                             
+                                <button className="login_form_submit_btn">Login</button>
+                           
                         </div>
 
                     </form>
@@ -185,17 +215,17 @@ export default function LoginRegisterModal(){
 
                         <div className="form_field_container">
                             <label className="form_label">Name</label>
-                            <input className="form_input" type="text" onChange={(e) => {setName(e.target.value)}}></input>
+                            <input required className="form_input" type="text" onChange={(e) => {setName(e.target.value)}}></input>
                         </div>
 
                         <div className="form_field_container">
                             <label className="form_label">Username</label>
-                            <input className="form_input" type="text" onChange={(e) => {setUsername(e.target.value)}}></input>
+                            <input required className="form_input" type="text" onChange={(e) => {setUsername(e.target.value)}}></input>
                         </div>
 
                         <div className="form_field_container">
                             <label className="form_label">Email</label>
-                            <input className="form_input" type="email" onChange={(e) => {setEmail(e.target.value)}}></input>
+                            <input required className="form_input" type="email" onChange={(e) => {setEmail(e.target.value)}}></input>
 
                         </div>                
 
@@ -207,7 +237,7 @@ export default function LoginRegisterModal(){
 
                         <div className="form_field_container">
                             <label className="form_label">Password</label>
-                            <input className="form_input" type="password" onChange={(e) => {setPassword(e.target.value)}}></input>
+                            <input required className="form_input" type="password" onChange={(e) => {setPassword(e.target.value)}}></input>
                         </div>                
                         
                         <div className="form_field_container">
@@ -216,8 +246,17 @@ export default function LoginRegisterModal(){
                         </div>
                         
                         <div style={{display:"flex",justifyContent:"center"}}>
+                        {loading === false && (
                             <button className="register_form_submit_btn">Register</button>
+                        )}
                         </div>
+
+                        {loading && loading === true && (
+                            <div className='loading_container'>
+                                <span className='loader'></span>
+                                <div>Loading...</div>
+                            </div>
+                        )}
                     </form>
                     </div>
                 )}

@@ -17,6 +17,8 @@ export default function IndexPageTurfComponent(){
             const data = response.data;
             setTurfInfo([data[0],data[1],data[2],data[3]]);
             setShowCaseTurfs(response.data);
+        }).catch((err) => {
+            console.log(err);
         });
 
     },[]);
@@ -34,14 +36,14 @@ export default function IndexPageTurfComponent(){
                             
                     <div className="index_page_turf_container_slider_item_img_container">
                         {/* <img src="https://lh3.googleusercontent.com/p/AF1QipNRFPQVEuMUd0JMWvxGNCb55L8Kia9PZL_uKxyi=s680-w680-h510" className="index_page_turf_container_slider_item_img"></img> */}
-                         <ImageSilder photos={turf.photos}></ImageSilder>
+                         {turf.photos && <ImageSilder photos={turf.photos}></ImageSilder>}
                     </div>
                    
                     
                     {/* <ImageSilder photos={turf.photos}></ImageSilder> */}
 
                     {/* <div className="index_page_turf_container_slider_item_information" onClick={() => {navigate(`/turfInfo/${turf._id}`)}}> */}
-                    <div className="index_page_turf_container_slider_item_information"  onClick={() => {navigate('/turfShowCase')}}>
+                    <div className="index_page_turf_container_slider_item_information"  onClick={() => {navigate(`/turfShowCase/${turf._id}`)}}>
                         <div className="index_page_turf_container_slider_item_information_name">{turf.name}</div>
                         
                         <div className="index_page_turf_container_slider_item_information_location">

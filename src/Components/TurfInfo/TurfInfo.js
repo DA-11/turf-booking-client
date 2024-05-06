@@ -6,8 +6,9 @@ import { UserContext } from '../../UserContext';
 import { useNavigate } from 'react-router-dom';
 
 export default function TurfInfo({turf_id,hostPageVisible}){
-
-    const id = turf_id;
+    
+    let {id} = useParams();
+    id = id === undefined ? turf_id : id;
     const[data,setData] = useState(null);
     
     const[gameDate,setGameDate] = useState(new Date());

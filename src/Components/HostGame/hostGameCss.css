@@ -11,13 +11,13 @@
 .step_form_heading{
     font-size: 24px;
     text-align: center;
-    
 }
 
 .date_time_selector_container{
     margin-top: 30px;
     font-size: 20px;
 }
+
 .step_form_container{
     display: flex;
     flex-direction: column;
@@ -52,14 +52,47 @@
     width: 100%;
 }
 
-.prev_step_btn,.next_step_btn{
+.prev_step_btn,
+.next_step_btn{
+    display: flex;
+    align-items: center;
+    justify-content: end;
     margin: 10px 0px 10px 0px;
-    border: 1px solid #ffffff;
     padding: 10px;
     border-radius: 10px;
     font-size: 22px;
     background-color: rgba(47, 158, 32, 0.808);
     color:white;
+
+}
+
+.step-btn-icon-left{
+    height: 30px;
+    width: 30px;
+    margin-left:6px;
+}
+
+.step-btn-icon-right{
+    height: 30px;
+    width: 30px;
+    margin-right:6px; 
+}
+
+.next_step_btn_fixed{
+    position: fixed;
+    bottom: 0px;
+    z-index: 4000;
+    margin: 0px;
+    right: 0px;
+    left: 0px;
+    border-radius: 0px;
+    text-align:end;
+    background-color: rgba(25, 80, 18, 0.897);
+}
+
+.next_btn_icon{
+    margin-left: 20px;
+    height: 30px;
 }
 
 .time_slot_choice_container{
@@ -91,18 +124,22 @@
 .players_choice_label{
     font-size: 24px;
     margin-bottom: 4px;
+    padding: 4px 10px 4px 10px;
 }
 
 .players_choice_label_input{
-    padding: 6px;
-    width: 100%;
-    font-size: 18px;
+    padding: 6px 10px 6px 6px;
+    width: 50vw;
+    min-width: 300px;
+    font-size: 22px;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 2px 2px 5px rgba(47, 158, 32, 0.466);
 }
 
 .hostGame_booking_btns{
     display: flex;
     width: 100%;
-    justify-content: space-between;
     font-size: 20px;
 }
 
@@ -116,7 +153,7 @@
 }
 
 .hostGame_booking_btn_bg{
-    background-color: rgba(96, 202, 34, 0.733);
+    background-color: rgba(47, 158, 32, 0.808);
     border: none;
 }
 
@@ -124,18 +161,8 @@
     margin-top: 20px;
 }
 
-.preview_info_div_container{
-    margin: 6px 0px 6px 0px;
-}
-
 .preview_info_label{
     font-size: 22px;
-    font-weight: 600;
-}
-
-.preview_info_detail{
-    color: gray;
-    font-size: 16px;
 }
 
 .edit_info_btn{
@@ -143,7 +170,7 @@
     border: none;
     padding: 10px;
     border-radius: 10px;
-    background-color:  rgb(89, 201, 24);;
+    background-color: rgba(47, 158, 32, 0.808);
     color: white;
 }
 
@@ -163,4 +190,152 @@
     border-radius: 10px;
     box-shadow: 1px 1px 5px rgba(96, 202, 34, 0.733);
     margin: 6px 0px 10px 0px;
+}
+
+.image_slider_container{
+    height: 70vh;
+    width: 80vw;
+    margin-top: 20px;
+    position: relative;
+    border-radius: 10px;
+    overflow:hidden;
+}
+
+.selected_turf_photo_container{
+    height: 100%;
+    width: 100%;
+}
+
+.selected_turf_photo{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    opacity: 90%;
+}
+
+.preview_info_name_div_container{
+    margin: 6px 0px 6px 0px;
+    position: absolute;
+    bottom: 0px;
+    left: 2vw;
+}
+
+.preview_info_date_div_container{
+    margin: 6px 0px 6px 0px;
+    position: absolute;
+    top: 50px;
+}
+
+.preview_info_time_div_container{
+    margin: 6px 0px 6px 0px;
+    position: absolute;
+    top: 0px;
+    left: 2vw;
+}
+
+.preview_info_detail{
+    color: rgb(0, 0, 0);
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.preview_info_date_detail{
+    color: rgb(0, 0, 0);
+    font-size: 14px;
+    rotate: 90deg;
+}
+
+.preview_info_time_and_date_detail{
+    font-size: 20px;
+}
+
+.info_date_container{
+/* max-width: 300px; */
+}
+
+.info_date{
+    display: flex;
+    justify-content: space-between;
+}
+
+.info_time_container{
+    max-width: 400px;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 6px;
+    box-shadow: 1px 1px 3px rgb(0, 0, 0);
+    font-weight: 600;
+    font-size: 18px;
+    background-color: rgba(175, 175, 175, 0.445);
+}
+    
+.info_time{
+    display: flex;
+    justify-content: space-between;
+    min-width: 250px;
+}
+
+.info_time_container_box{
+   position: absolute;
+   top: 0px;
+   left: 0px;
+   right: 0px;
+   color: rgb(0, 0, 0);
+}
+
+.info-icon{
+    height: 30px;
+    margin-left: 4px;
+    color: rgb(64, 184, 64);
+}
+
+.info-icon-container{
+    display: flex;
+    text-align: center;
+    position: relative;
+}
+
+.link{
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.information{
+    display: none;
+    padding: 5px;
+    position: absolute;
+    bottom: -50px;
+    background-color: rgba(134, 133, 133, 0.801);
+    color: rgb(255, 255, 255);
+    border-radius: 10px;
+    font-size: 14px;
+}
+
+.info-icon-hover{
+    cursor: pointer;
+}
+
+.info-icon-hover:hover + .information{
+    display: block;
+}
+
+.alert_window_container{
+   z-index: 5000;
+}
+
+.turf_name_and_info_icon_container{
+    background-color: rgba(42, 58, 30, 0.253);
+    display: flex;
+    padding: 6px;
+    border-radius: 10px;
+}
+
+.turf_info_icon{
+    height: 30px;
+    margin-left: 5px;
+}
+
+.fukbtW {
+    width: 100%;
 }

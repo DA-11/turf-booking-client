@@ -73,15 +73,35 @@ export default function Header(){
             <div className="header">
                 <div className="header_options"> 
                     <div className="logo" onClick={openIndexPage}>
-                        LOGO
+                        <div class="logo_image"></div>
+                        <div className="logo_word">F 9</div>
                     </div>
                     
-                    <div className="header_find_game_btn" onClick={openFindGame}>
-                        FIND A GAME
+                    <div className="header_option" onClick={openFindGame}>
+                        <div className="">FIND A GAME</div>
+                        <div className="header_option_icon_container">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="header_option_icon">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+                            </svg>
+                        </div>
                     </div>
 
-                    <div className="header_host_game_btn" onClick={openHostGame}>
-                        HOST A GAME
+                    <div className="header_option" onClick={openHostGame}>
+                        <div className="">HOST A GAME</div>
+                        <div className="header_option_icon_container">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="header_option_icon">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 0 1-2.25 2.25M16.5 7.5V18a2.25 2.25 0 0 0 2.25 2.25M16.5 7.5V4.875c0-.621-.504-1.125-1.125-1.125H4.125C3.504 3.75 3 4.254 3 4.875V18a2.25 2.25 0 0 0 2.25 2.25h13.5M6 7.5h3v3H6v-3Z" />
+                            </svg>
+                        </div>
+                    </div>
+
+                    <div className="header_option" onClick={openFindTurfs}>
+                        <div className="">TURFS</div>
+                        <div className="header_option_icon_container">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="header_option_icon">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M9 6.75V15m6-6v8.25m.503 3.498 4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 0 0-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0Z" />
+                            </svg>
+                        </div>
                     </div>
 
                     

@@ -1,22 +1,27 @@
 import ImageSilder from "../Index/ImageSlider";
 import { useState,useEffect } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
 import './turfShowCaseCss.css'
 import TurfInfo from "../TurfInfo/TurfInfo";
+import { useParams,useNavigate } from "react-router-dom";
 
 export default function TurfShowCase(){
 
+    const {id} = useParams();
     const[turfInfo,setTurfInfo] = useState([]);
     const[serchInput,setSearchInput] = useState('');
-    const[openTurfHostPage,setOpenTurfHostPage] = useState(false);
-    const[currentTurfId,setcurrentTurfId] = useState('');
+    const[openTurfHostPage,setOpenTurfHostPage] = useState(id === undefined ? false : true);
+    const[currentTurfId,setcurrentTurfId] = useState(id === undefined ? '' : id);
+    const navigate = useNavigate();
 
     
     useEffect(() => {
         
+        console.log(id)
         axios.get('/turf/getAll').then((response) => {
             setTurfInfo(response.data);
+        }).catch((err) => {
+            console.log(err);
         });
 
     },[]);
@@ -46,6 +51,12 @@ export default function TurfShowCase(){
         
     }
 
+    function closeCurrentTurfPage(){
+        setOpenTurfHostPage(false);
+        setcurrentTurfId('');
+        navigate('/turfShowCase');
+    }
+
     return (
         <>
 
@@ -53,7 +64,7 @@ export default function TurfShowCase(){
             {/* <TurfInfo turf_id={currentTurfId}></TurfInfo> */}
             <TurfInfo turf_id={currentTurfId}  hostPageVisible={true}></TurfInfo>
             {openTurfHostPage && openTurfHostPage === true && (
-                <div className="turfInfo_host_page_close" onClick={() => {setOpenTurfHostPage(false)}}>
+                <div className="turfInfo_host_page_close" onClick={closeCurrentTurfPage}>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="turfInfo_host_page_close_svg">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
                     </svg>

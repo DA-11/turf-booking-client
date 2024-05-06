@@ -24,6 +24,15 @@ export default function IndexPage(){
                 <div className="index_page_turf_container_heading">FIND AND EXPLORE NEW TURFS</div>
                     <IndexPageTurfComponent></IndexPageTurfComponent>
             </div>
+
+            <div className="index_page_more_than_just_sport_container">
+                <div className="index_page_more_than_just_sport"> 
+                    {/* <img className="index_page_more_than_just_sport_img" src="https://res.cloudinary.com/dfcsc86hq/image/upload/v1714815434/2Y8A2387_owvcda.webp" ></img> */}
+                    <div className="index_page_more_than_just_sport_para">
+                    98% OF OUR COMMUNITY WOULD RECOMMEND FALSE9. JOIN THEM IN GETTING ACTIVE. HERE'S TO HEALTHIER, HAPPIER WEEKS.
+                    </div>
+                </div>
+            </div>
             
             <div className="index_page_working_details_container_box">
                 <div className="index_page_working_details_container">

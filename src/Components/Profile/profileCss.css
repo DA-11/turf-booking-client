@@ -242,3 +242,23 @@
 .red_heading_req{
     background-color:  rgba(190, 74, 45, 0.61);
 }
+
+@media only screen and (max-width:450px){
+    .games_btn{
+
+        background-color: #d5fc7956;
+        padding: 4px;
+        font-size: 12px;
+        margin: 10px 0px 6px 0px;
+        border-radius: 10px;
+    }
+
+    .current_btn{
+        border:none;
+        box-shadow: 1px 1px 8px rgb(77, 189, 25);
+        background-color: #d5fc7986;
+        font-size: 16px;
+        padding: 6px;
+    }
+}
+  

@@ -21,7 +21,19 @@ export default function ChatBody({messages,socket,friendUserName}){
     useEffect(() => {
       scrollToBottom()
     }, [messages]);
-  
+    
+
+    function getMessageTime(timestamp){
+        const msgDate = new Date(timestamp);
+        const hours = msgDate.getHours();
+        const mins = msgDate.getMinutes();
+
+        const date = msgDate.getDate();
+        const month = msgDate.getMonth();
+
+        console.log(`${date}/${month}`);
+        console.log(`${hours}:${mins}`);
+    }
 
     const{user} = useContext(UserContext);
     
@@ -42,6 +54,7 @@ export default function ChatBody({messages,socket,friendUserName}){
                             {/* <p className="sender__name"></p> */}
                             <div className="message__sender">
                                 <p>{message.message}</p>
+                                <div>{getMessageTime(message.timestamp)}</div>
                             </div>
                         </div>
                     </div>
@@ -54,6 +67,7 @@ export default function ChatBody({messages,socket,friendUserName}){
                             {/* <p className="sender__name"></p> */}
                             <div className="message__sender">
                                 <Image filename={message.filename} imageSrc={message.message}></Image>
+                                <div>{getMessageTime(message.timestamp)}</div>
                             </div>
                         </div>
                     </div>
@@ -71,6 +85,7 @@ export default function ChatBody({messages,socket,friendUserName}){
                             <p className="message_friendname">{friendUserName}</p>
                             <div className="message__recipient">
                                 <p>{message.message}</p>
+                                <div>{getMessageTime(message.timestamp)}</div>
                             </div>
                         </div>
                     </div>
@@ -83,6 +98,7 @@ export default function ChatBody({messages,socket,friendUserName}){
                         <p className="message_friendname">{friendUserName}</p>
                             <div className="message__recipient">
                                 <Image filename={message.filename}  imageSrc={message.message}></Image>
+                                <div>{getMessageTime(message.timestamp)}</div>
                             </div>
                         </div>
                     </div>

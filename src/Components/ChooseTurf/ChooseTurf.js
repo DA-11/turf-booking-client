@@ -4,7 +4,8 @@ import ImageSilder from "../Index/ImageSlider";
 import "./chooseTurfCss.css"
 import TurfShowCase from "../TurfShowCase/TurfShowCase";
 import TurfInfo from "../TurfInfo/TurfInfo";
-export default function ChooseTurf({step,setStep,turfName,setTurfName,setLocation}){
+
+export default function ChooseTurf({step,setStep,turfName,setTurfName,setLocation,setPhotos,setTurfId}){
     
     const[turfInfo,setTurfInfo] = useState([]);
     const[serchInput,setSearchInput] = useState('');
@@ -12,11 +13,12 @@ export default function ChooseTurf({step,setStep,turfName,setTurfName,setLocatio
     const[openTurfHostPage,setOpenTurfHostPage] = useState(false);
     const[currentTurfId,setcurrentTurfId] = useState('');
 
-    
     useEffect(() => {
         
         axios.get('/turf/getAll').then((response) => {
             setTurfInfo(response.data);
+        }).catch((err) => {
+            console.log(err);
         });
 
     },[]);
@@ -41,10 +43,12 @@ export default function ChooseTurf({step,setStep,turfName,setTurfName,setLocatio
         
     }
 
-    function handleTurfChoice(name,location){
+    function handleTurfChoice(name,location,photos,id){
         setLocation(location);
         setTurfName(name);
-        setSelectedTurf(name)
+        setSelectedTurf(name);
+        setPhotos(photos);
+        setTurfId(id);
     }
 
     function openTurfHost(id){
@@ -110,7 +114,7 @@ export default function ChooseTurf({step,setStep,turfName,setTurfName,setLocatio
                                 {/* <ImageSilder photos={turf.photos}></ImageSilder> */}
 
                                 {/* <div className="index_page_turf_container_slider_item_information" onClick={() => {navigate(`/turfInfo/${turf._id}`)}}> */}
-                                <div className="index_page_turf_container_slider_item_information" onClick={() => {handleTurfChoice(turf.name,turf.location)}}>
+                                <div className="index_page_turf_container_slider_item_information" onClick={() => {handleTurfChoice(turf.name,turf.location,turf.photos,turf._id)}}>
                                     <div className="index_page_turf_container_slider_item_information_name">{turf.name}</div>
                                     
                                     <div className="index_page_turf_container_slider_item_information_location">
