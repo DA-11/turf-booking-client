@@ -21,8 +21,12 @@ import ChatBar from './Components/Chat/ChatBar';
 // const socket = socketIO.connect('http://35.154.82.242:5003')
 // axios.defaults.baseURL = 'http://35.154.82.242:5003';
 
-const socket = socketIO.connect('http://localhost:8080')
-axios.defaults.baseURL = 'http://localhost:8080';
+// const socket = socketIO.connect('http://localhost:8080')
+// axios.defaults.baseURL = 'http://localhost:8080';
+
+const socket = socketIO.connect('http://13.228.225.19:8080')
+axios.defaults.baseURL = 'http://13.228.225.19:8080';
+
 axios.defaults.withCredentials = true;
 
 
