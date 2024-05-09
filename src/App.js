@@ -24,8 +24,8 @@ import ChatBar from './Components/Chat/ChatBar';
 // const socket = socketIO.connect('http://localhost:8080')
 // axios.defaults.baseURL = 'http://localhost:8080';
 
-const socket = socketIO.connect('http://13.228.225.19:8080')
-axios.defaults.baseURL = 'http://13.228.225.19:8080';
+const socket = socketIO.connect('https://turf-booking-client.vercel.app/')
+axios.defaults.baseURL = 'https://turf-booking-client.vercel.app/';
 
 axios.defaults.withCredentials = true;
 
