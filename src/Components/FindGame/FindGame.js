@@ -17,19 +17,27 @@ export default function FindGame(){
 
     useEffect(() => {
         
-        // axios.get('/game/getAllGames').then((response) => {
-        //     console.log(response.data);
-        //     setGames(response.data);
-        // }).catch((err) => {
-        //     console.log(err);
-        // })
+        let date = new Date();
+        
+        const year = date.getFullYear();
+        let month = date.getMonth();
+        let d = date.getDate();
 
+        if(month < 9){
+            month = `0${month}`;
+        }
+
+        if(d < 9){
+            d = `0${d}`;
+        }
+
+        console.log(`${year}-${month}-${d}`);
         axios.get('/game/getGameAfterTime',{
                 params:{
-                    turfName:serchInput,
-                    date:new Date()
+                    turfName:'00',
+                    "date":`${year}-${month}-${d}`
                 }
-            }).then((response) => {
+        }).then((response) => {
             console.log(response.data);
             setGames(response.data);
         }).catch((err) => {
@@ -37,6 +45,7 @@ export default function FindGame(){
         })
 
     },[])
+    
     
     function getMonthDateFromTime(time){
 
@@ -87,16 +96,28 @@ export default function FindGame(){
     }
 
     function getSearchResult(){
+        
+        const date = new Date();
+        const year = date.getFullYear();
+        let month = date.getMonth();
+        let d = date.getDate();
+
+        if(month < 9){
+            month = `0${month}`;
+        }
+
+        if(d < 9){
+            d = `0${d}`;
+        }
 
         if(serchInput.length > 0){
 
             axios.get('/game/getGameAfterTime',{
                 params:{
                     turfName:serchInput,
-                    date:new Date()
+                    "date":`${year}-${month}-${d}`
                 }
-            }
-            ).then((response) => {
+            }).then((response) => {
                 console.log(response.data);
                 setGames(response.data);
                 setSearchInput('');
