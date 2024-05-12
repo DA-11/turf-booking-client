@@ -17,12 +17,25 @@ export default function FindGame(){
 
     useEffect(() => {
         
-        axios.get('/game/getAllGames').then((response) => {
+        // axios.get('/game/getAllGames').then((response) => {
+        //     console.log(response.data);
+        //     setGames(response.data);
+        // }).catch((err) => {
+        //     console.log(err);
+        // })
+
+        axios.get('/game/getGameAfterTime',{
+                params:{
+                    turfName:serchInput,
+                    date:new Date()
+                }
+            }).then((response) => {
             console.log(response.data);
             setGames(response.data);
         }).catch((err) => {
             console.log(err);
         })
+
     },[])
     
     function getMonthDateFromTime(time){
