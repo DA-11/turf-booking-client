@@ -5,6 +5,8 @@ import './indexPageCss.css'
 import { UserContext } from '../../UserContext';
 import { useContext } from "react";
 import LiveRequests from "./LiveRequests";
+import CookieConsent from "react-cookie-consent";
+
 export default function IndexPage(){
     
     const{user,setUser,setGame} = useContext(UserContext);
@@ -12,6 +14,9 @@ export default function IndexPage(){
     return(
        
         <>    
+
+            <CookieConsent>This site uses cookies to safely manage your data. Please check if your browser allows it.</CookieConsent>
+            
             <div className="index_page_img_container">        
                 <IndexPageImageContainerComponent></IndexPageImageContainerComponent>
             </div>
