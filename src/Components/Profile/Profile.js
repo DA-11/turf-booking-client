@@ -35,7 +35,7 @@ export default function(){
 
         setUser(null);    
         navigate('/');
-        axios.post('/user/logoutUser').then((response) => {
+        axios.post('/user/logout').then((response) => {
             console.log(response.data);
         }).catch((err) => {
             console.log(err);
