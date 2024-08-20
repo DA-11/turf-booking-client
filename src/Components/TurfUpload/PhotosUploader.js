@@ -61,7 +61,7 @@ export default function PhotosUploader({photos,onChange,loading,setLoading}){
                 {photos && photos.length > 0 && photos.map(link => {
                     return (
                         <div className="uploaded_images_container" key={link}>
-                            <img className="uploaded_image" src={link} src="image"></img>
+                            <img className="uploaded_image" src={link} alt="image"></img>
                             <button onClick={(e) => removePhoto(link,e)} className="remove_uploaded_photo">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="remove_photo_icon">
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
