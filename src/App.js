@@ -24,11 +24,13 @@ import ChatBar from './Components/Chat/ChatBar';
 // const socket = socketIO.connect('http://localhost:8080')
 // axios.defaults.baseURL = 'http://localhost:8080';
 
-const socket = socketIO.connect('https://turf-booking-backend.onrender.com/')
-axios.defaults.baseURL = 'https://turf-booking-backend.onrender.com/';
+//const socket = socketIO.connect('https://turf-booking-backend.onrender.com/')
+//axios.defaults.baseURL = 'https://turf-booking-backend.onrender.com/';
+
+const socket = socketIO.connect('https://master--false9-turf-booking.netlify.app/');
+axios.defaults.baseURL = 'https://master--false9-turf-booking.netlify.app/';
 
 axios.defaults.withCredentials = true;
-
 
 function App() {
   return (
