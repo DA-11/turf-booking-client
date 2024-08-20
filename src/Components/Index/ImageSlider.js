@@ -33,10 +33,10 @@ export default function ImageSilder({photos = []}){
              )} */}
 
             {photos && ( 
-                <img src={photos[Math.abs(currentIdx)]} className="turfInfo_Container_image_slider_container_img"></img>
+                <img src={photos[Math.abs(currentIdx)]} alt="image" className="turfInfo_Container_image_slider_container_img"></img>
             )}
 
-            {photos && photos.length === 0 && <img src="https://t3.ftcdn.net/jpg/04/62/93/66/360_F_462936689_BpEEcxfgMuYPfTaIAOC1tCDurmsno7Sp.jpg" className="turfInfo_Container_image_slider_container_img"></img>} 
+            {photos && photos.length === 0 && <img src="https://t3.ftcdn.net/jpg/04/62/93/66/360_F_462936689_BpEEcxfgMuYPfTaIAOC1tCDurmsno7Sp.jpg" alt="image" className="turfInfo_Container_image_slider_container_img"></img>} 
 
             
             {photos && photos.length > 1 && (
