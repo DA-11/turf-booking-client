@@ -107,7 +107,7 @@ export default function TurfInfo({turf_id,hostPageVisible}){
 
                 <div className='view_images_page_gallery'>
                     {data && data.photos && data.photos.length > 0 && (
-                        <img src={data.photos[photoIdx]} className='turfInfo_Container_Img_slider_Container_img'></img>
+                        <img src={data.photos[photoIdx]} alt="image" className='turfInfo_Container_Img_slider_Container_img'></img>
                     )}
                 </div>
             </div>
@@ -123,7 +123,7 @@ export default function TurfInfo({turf_id,hostPageVisible}){
                         </div>
                     )}
                     {data && data.photos && data.photos.length > 0 && (
-                        <img src={data.photos[0]} className='turfInfo_Container_Img_slider_Container_img'></img>
+                        <img src={data.photos[0]} alt="image" className='turfInfo_Container_Img_slider_Container_img'></img>
                     )}
                     {/* <img src='https://www.powerleague.com/wp-content/uploads/2022/10/FIND-1024x576.webp' className='turfInfo_Container_Img_slider_Container_img'></img> */}
                 </div>        
