@@ -30,8 +30,12 @@ import ChatBar from './Components/Chat/ChatBar';
 // const socket = socketIO.connect('https://main--turf-booking-backend.netlify.app/');
 // axios.defaults.baseURL = 'https://main--turf-booking-backend.netlify.app/';
 
-const socket = socketIO.connect('https://turf-booking-backend-wexqezgzgq-em.a.run.app')
-axios.defaults.baseURL = 'https://turf-booking-backend-wexqezgzgq-em.a.run.app';
+// const socket = socketIO.connect('https://turf-booking-backend-wexqezgzgq-em.a.run.app')
+// axios.defaults.baseURL = 'https://turf-booking-backend-wexqezgzgq-em.a.run.app';
+
+const socket = socketIO.connect('https://turf-booking-backend-182079696524.asia-south1.run.app')
+axios.defaults.baseURL = 'https://turf-booking-backend-182079696524.asia-south1.run.app';
+
 
 axios.defaults.withCredentials = true;
 
